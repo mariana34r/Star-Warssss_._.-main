@@ -663,7 +663,7 @@ h1 {
 }
 
 .medeplejable {
-    display: none; /* Oculta el menú por defecto */
+    display: none; 
     position: absolute;
     top: 80px; 
     right: 10px; 
@@ -694,25 +694,25 @@ h1 {
     color: #ff0c0c;
 }
 
-/* Mostrar el menú solo en pantallas pequeñas */
+
 @media (max-width: 768px) {
     .medeplejable-toggle {
-        display: block; /* Muestra el toggle en pantallas pequeñas */
+        display: block; 
     }
 
     .medeplejable-icon {
-        display: inline-block; /* Muestra el icono en pantallas pequeñas */
+        display: inline-block; 
     }
 
     .medeplejable {
-        display: none; /* Asegura que el menú esté oculto por defecto en pantallas pequeñas */
+        display: none; 
     }
 
     .medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
-        display: block; /* Muestra el menú cuando el checkbox está marcado */
+        display: block;
     }
 
     .medeplejable-toggle input[type="checkbox"]:checked + .medeplejable-icon img {
-        transform: rotate(90deg); /* Rote la imagen cuando el menú está abierto */
+        transform: rotate(90deg); 
     }
 }

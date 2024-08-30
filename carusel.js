@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         images.forEach((img, i) => {
             if (i === index) {
                 img.classList.add('active');
-                img.classList.remove('transition'); // Elimina la clase de transición para las imágenes activas
-                img.style.transform = 'translateX(0)'; // Imagen activa se mueve a la vista
+                img.classList.remove('transition'); 
+                img.style.transform = 'translateX(0)'; 
             } else {
                 img.classList.remove('active');
-                img.classList.add('transition'); // Añade la clase de transición a las imágenes no activas
-                img.style.transform = 'translateX(100%)'; // Las otras imágenes están fuera de la vista
+                img.classList.add('transition'); 
+                img.style.transform = 'translateX(100%)'; 
             }
         });
     }
@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
         showImage(currentIndex);
     }
 
-    // Configura el intervalo para que las imágenes cambien automáticamente cada 5 segundos
+    
     setInterval(nextImage, 5000);
 
     prevButton.addEventListener('click', prevImage);
     nextButton.addEventListener('click', nextImage);
 
-    // Mostrar la primera imagen al cargar
+
     showImage(currentIndex);
 });
