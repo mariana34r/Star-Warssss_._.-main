@@ -52,7 +52,7 @@ Esta Pagina cuenta Aquí encontrarás información sobre todo el universo de est
 
 ## Tecnologías Utilizadas 📱
 
-- HTML y CSS
+- HTML , CSS y javascript
 
 ## Instrucciones📐
 
