@@ -41,14 +41,13 @@ Esta Pagina cuenta Aquí encontrarás información sobre todo el universo de est
 
 
 ### Captura de la Seccion Buscador ✨ 
-![Captura del Home](https://github.com/user-attachments/assets/de5da7c9-b150-48d6-8160-ff3d9b5e48a5)
+![Captura del Home](https://github.com/user-attachments/assets/45355a81-d2c8-4fe4-bccf-979cee1cad5f)
 
 
 ### Captura de la Seccion Infomacion 🚀
 ![Captura del Home](https://github.com/user-attachments/assets/086cc27f-9db2-41f5-bbf1-61091351a80b)
 ![Captura del Home](https://github.com/user-attachments/assets/f7c1ad3d-da37-424d-8f4f-89c802ccc986)
-![Captura del Home](https://github.com/user-attachments/assets/45355a81-d2c8-4fe4-bccf-979cee1cad5f)
-
+![Captura del Home](https://github.com/user-attachments/assets/0fe8fd53-e9be-4714-bdd6-e675bc1a1f1f)
 
 
 ## Tecnologías Utilizadas 📱
