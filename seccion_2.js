@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
 
         function updateSlider() {
-            const offset = -currentIndex * 100; // Mueve el slider hacia la izquierda
+            const offset = -currentIndex * 100; 
             sliderInner.style.transform = `translateX(${offset}%)`;
         }
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentIndex < images.length - 1) {
                 currentIndex++;
             } else {
-                currentIndex = 0; // Regresar al inicio
+                currentIndex = 0; 
             }
             updateSlider();
         });
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentIndex > 0) {
                 currentIndex--;
             } else {
-                currentIndex = images.length - 1; // Ir al final
+                currentIndex = images.length - 1; 
             }
             updateSlider();
         });

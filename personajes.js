@@ -1,7 +1,7 @@
 const apiUrl = 'https://swapi.dev/api/people/';
 let allCharacters = [];
 
-// Función para obtener todos los personajes
+
 async function fetchAllCharacters() {
     let characters = [];
     let nextUrl = apiUrl;
@@ -21,13 +21,13 @@ async function fetchAllCharacters() {
     return characters;
 }
 
-// Función para inicializar la página
+
 async function initializePage() {
     allCharacters = await fetchAllCharacters();
     displayCharacters(allCharacters);
 }
 
-// Función para construir el contenido de los personajes
+
 function createCharacterCard(character) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -41,7 +41,7 @@ function createCharacterCard(character) {
     return card;
 }
 
-// Función para mostrar todos los personajes
+
 function displayCharacters(characters) {
     const container = document.getElementById('characters');
     container.innerHTML = '';
@@ -53,7 +53,7 @@ function displayCharacters(characters) {
     container.appendChild(fragment);
 }
 
-// Función para mostrar personajes con solo nombre y color de ojos
+
 function displayCharactersWithEyeColor(characters) {
     const container = document.getElementById('characters');
     container.innerHTML = '';
@@ -71,7 +71,7 @@ function displayCharactersWithEyeColor(characters) {
     container.appendChild(fragment);
 }
 
-// Función para mostrar personajes con solo nombre y género
+
 function displayCharactersWithGender(characters) {
     const container = document.getElementById('characters');
     container.innerHTML = '';
@@ -89,19 +89,18 @@ function displayCharactersWithGender(characters) {
     container.appendChild(fragment);
 }
 
-// Función para ordenar por altura
+
 function sortByHeight() {
     const sortedCharacters = [...allCharacters].sort((a, b) => a.height - b.height);
     displayCharacters(sortedCharacters);
 }
 
-// Función para filtrar por color de ojos
 function filterByEyeColor() {
     const blueEyed = allCharacters.filter(character => character.eye_color === 'blue');
     displayCharactersWithEyeColor(blueEyed);
 }
 
-// Función para ordenar por edad
+
 function sortByAge() {
     const currentYear = new Date().getFullYear();
     const charactersWithAge = allCharacters.map(character => {
@@ -112,18 +111,17 @@ function sortByAge() {
     displayCharacters(sortedCharacters);
 }
 
-// Función para filtrar por género
+
 function filterByGender() {
     const gender = document.getElementById('gender-select').value;
     const filtered = allCharacters.filter(character => character.gender === gender || gender === '');
     displayCharactersWithGender(filtered);
 }
 
-// Función para alternar la visibilidad del menú de género
 function toggleGenderMenu() {
     const menu = document.getElementById('gender-menu');
     menu.classList.toggle('hidden');
 }
 
-// Inicializar la página cargando los personajes
+
 initializePage();

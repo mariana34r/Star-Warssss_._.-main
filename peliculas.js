@@ -1,6 +1,6 @@
 const filmsUrl = 'https://swapi.dev/api/films/';
 
-// Función para obtener todas las películas
+
 async function fetchAllFilms(url) {
     let allFilms = [];
     let nextUrl = url;
@@ -10,17 +10,16 @@ async function fetchAllFilms(url) {
             const response = await fetch(nextUrl);
             const data = await response.json();
             allFilms = allFilms.concat(data.results);
-            nextUrl = data.next; // Obtén la URL de la siguiente página
+            nextUrl = data.next; 
         } catch (error) {
             console.error('Error fetching data:', error);
-            nextUrl = null; // Termina el bucle en caso de error
+            nextUrl = null; 
         }
     }
 
     return allFilms;
 }
 
-// Función para mostrar las películas
 function displayFilms(films) {
     const container = document.getElementById('films');
     container.innerHTML = '';
@@ -39,7 +38,7 @@ function displayFilms(films) {
     });
 }
 
-// Función para mostrar personajes por película
+
 function showCharactersByFilm() {
     fetchAllFilms(filmsUrl).then(films => {
         const select = document.getElementById('film-select');
@@ -54,7 +53,7 @@ function showCharactersByFilm() {
     });
 }
 
-// Función para mostrar personajes de la película seleccionada
+
 function showCharacters() {
     const filmUrl = document.getElementById('film-select').value;
     if (!filmUrl) return;
@@ -80,7 +79,7 @@ function showCharacters() {
     });
 }
 
-// Función para mostrar director por película
+
 function showDirectorByFilm() {
     fetchAllFilms(filmsUrl).then(films => {
         const select = document.getElementById('director-film-select');
@@ -95,7 +94,7 @@ function showDirectorByFilm() {
     });
 }
 
-// Función para mostrar el director de la película seleccionada
+
 function showDirector() {
     const filmUrl = document.getElementById('director-film-select').value;
     if (!filmUrl) return;
@@ -113,7 +112,7 @@ function showDirector() {
     });
 }
 
-// Función para ordenar las películas por fecha de lanzamiento
+
 function sortByReleaseDate() {
     fetchAllFilms(filmsUrl).then(films => {
         films.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
@@ -121,7 +120,7 @@ function sortByReleaseDate() {
     });
 }
 
-// Función para mostrar naves por película
+
 function showStarshipsByFilm() {
     fetchAllFilms(filmsUrl).then(films => {
         const select = document.getElementById('starships-film-select');
@@ -136,7 +135,7 @@ function showStarshipsByFilm() {
     });
 }
 
-// Función para mostrar naves de la película seleccionada
+
 function showStarships() {
     const filmUrl = document.getElementById('starships-film-select').value;
     if (!filmUrl) return;
@@ -161,5 +160,5 @@ function showStarships() {
     });
 }
 
-// Inicializar la página cargando las películas
+
 fetchAllFilms(filmsUrl).then(displayFilms);

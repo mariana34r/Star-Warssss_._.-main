@@ -4,24 +4,6 @@ body {
     background-size: cover;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .image-container {
     display: flex;
     justify-content: center;
@@ -41,30 +23,26 @@ body {
 
 @media (max-width: 600px) {
     .image-container img {
-        max-width: 80%; /* Adjust size for small screens */
+        max-width: 80%;
         margin-bottom: 10px;
         margin-top: 20px;
     }
 }
 
-
-
-/* Contenedor principal de las imágenes */
 .libreria {
     max-width: 1200px;
     margin: 80px auto;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
-    gap: 20px; /* Espacio entre los elementos */
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around;
 }
 
-/* Estilos de las imágenes de juego */
 .imagen_juego1,
 .imagen_juego2,
 .imagen_juego3 {
-    flex: 1; 
+    flex: 1;
     text-align: center;
     border-radius: 10px;
     overflow: hidden;
@@ -73,7 +51,6 @@ body {
     background-color: #ccc4c434;
 }
 
-/* Estilos de las imágenes al pasar el cursor */
 .imagen_juego1:hover,
 .imagen_juego2:hover,
 .imagen_juego3:hover {
@@ -81,23 +58,21 @@ body {
     background-color: #555febe8;
 }
 
-/* Estilos de las imágenes dentro de los contenedores */
 .imagen_juego1 img,
 .imagen_juego2 img,
 .imagen_juego3 img {
-    width: 45%; 
-    height: auto; 
+    width: 45%;
+    height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-/* Estilos del texto dentro de los contenedores de imágenes */
 .imagen_juego1 p,
 .imagen_juego2 p,
 .imagen_juego3 p {
     font-size: 24px;
     margin-bottom: 20px;
-    text-align: center; /* Centra el título */
+    text-align: center;
     font-family: 'Starjout.ttf';
     font-size: 28px;
     margin-top: 20px;
@@ -107,30 +82,20 @@ body {
     transition: transform 0.3s ease;
 }
 
-
-
 @font-face {
     font-family: 'Starjout.ttf';
     src: url(Starjedi.ttf)
     format('TrueType');
-    
 }
 
-
-
-
-
-
-/* Estilos del texto al pasar el cursor */
 .imagen_juego1:hover p,
 .imagen_juego2:hover p,
 .imagen_juego3:hover p {
-    color: #ffffff; 
+    color: #ffffff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Media Queries para ajustar el diseño según el tamaño de pantalla */
-@media (max-width: 1024px) { /* Para pantallas medianas, como tablets en modo horizontal */
+@media (max-width: 1024px) {
     .libreria {
         flex-direction: row;
         flex-wrap: wrap;
@@ -138,38 +103,30 @@ body {
     .imagen_juego1,
     .imagen_juego2,
     .imagen_juego3 {
-        flex: 1 1 calc(50% - 20px); /* Muestra 2 imágenes por fila */
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
-@media (max-width: 768px) { /* Para pantallas pequeñas, como móviles */
+@media (max-width: 768px) {
     .libreria {
         flex-direction: column;
     }
     .imagen_juego1,
     .imagen_juego2,
     .imagen_juego3 {
-        flex: 1 1 100%; /* Muestra 1 imagen por fila */
+        flex: 1 1 100%;
     }
 }
 
-
-
-
-
-
-
-/* General Styles for all screens */
 .menu {
-    background-color: rgba(255, 255, 255, 0); /* Translucent background */
+    background-color: rgba(255, 255, 255, 0);
     padding: 0;
     position: fixed;
-    width: auto; /* Adjust width to fit content */
+    width: auto;
     z-index: 1000;
-    /* Adjust alignment for large screens */
-    top: 0; /* Menu at the top */
-    right: 0; /* Menu aligned to the right edge */
-    padding-right: 20px; /* Add some padding to move menu items away from the edge */
+    top: 0;
+    right: 0;
+    padding-right: 20px;
 }
 
 .menu ul {
@@ -177,22 +134,22 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    flex-wrap: wrap; /* Ensure items wrap on small screens */
+    justify-content: flex-end;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 
 .menu li {
-    margin: 0 15px; /* Adjust margin */
+    margin: 0 15px;
 }
 
 .menu a img {
-    width: 75px; /* Adjust size */
+    width: 75px;
     height: auto;
     display: block;
     border: 2px solid #ffffff;
-    border-radius: 50%; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu a {
@@ -201,39 +158,32 @@ body {
 }
 
 .menu a:hover img {
-    opacity: 0.8; 
+    opacity: 0.8;
     transform: scale(1.2);
 }
 
-
-
-
-
-
-
-/* Media Queries for Device-Specific Adjustments */
 @media (min-width: 769px) {
     .menu {
-        top: 0; /* Menu at the top on larger screens */
-        right: 0; /* Align to the right edge */
-        padding-right: 20px; /* Space from the right edge */
+        top: 0;
+        right: 0;
+        padding-right: 20px;
     }
 }
 
 @media (max-width: 768px) {
     .menu {
-        bottom: 0; /* Menu at the bottom on small screens */
-        top: auto; /* Ensure it's not positioned at the top */
-        width: 100%; /* Ensure it takes the full width */
-        padding: 0; /* Remove padding for small screens */
-        justify-content: center; /* Center items horizontally */
-        background-color: rgba(255, 255, 255, 0.253); /* Translucent background */
-        border-top-left-radius: 35px; /* Rounded top-left corner */
-        border-top-right-radius: 35px; /* Rounded top-right corner */
-        border: 2px solid #ddd; /* Optional: Add a subtle border to enhance the rounded effect */
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.253);
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border: 2px solid #ddd;
     }
 
     .menu ul {
-        justify-content: center; /* Center items within the menu */
+        justify-content: center;
     }
 }

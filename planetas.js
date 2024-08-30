@@ -1,9 +1,8 @@
 const planetsUrl = 'https://swapi.dev/api/planets/';
 
-// Cache para almacenar los planetas
 let cachedPlanets = [];
 
-// Función para obtener todos los planetas
+
 async function fetchAllPlanets(url) {
     if (cachedPlanets.length > 0) return cachedPlanets;
 
@@ -22,11 +21,10 @@ async function fetchAllPlanets(url) {
         }
     }
 
-    cachedPlanets = allPlanets; // Cachea los planetas
+    cachedPlanets = allPlanets;
     return allPlanets;
 }
 
-// Función para mostrar los planetas
 function displayPlanets(planets) {
     const container = document.getElementById('planets');
     container.innerHTML = '';
@@ -45,14 +43,13 @@ function displayPlanets(planets) {
     });
 }
 
-// Función para ordenar por población
 async function sortByPopulation() {
     const planets = await fetchAllPlanets(planetsUrl);
     planets.sort((a, b) => b.population - a.population);
     displayPlanets(planets);
 }
 
-// Función para filtrar por residentes
+
 async function filterByPlanetResidents() {
     const planets = await fetchAllPlanets(planetsUrl);
     const planetId = document.getElementById('planet-select').value;
@@ -80,7 +77,7 @@ async function filterByPlanetResidents() {
     });
 }
 
-// Función para filtrar por tipo de terreno
+
 async function filterByTerrain() {
     const planets = await fetchAllPlanets(planetsUrl);
     const terrain = document.getElementById('terrain-select').value;
@@ -88,7 +85,7 @@ async function filterByTerrain() {
     displayPlanets(filteredPlanets);
 }
 
-// Función para filtrar por clima
+
 async function filterByClimate() {
     const planets = await fetchAllPlanets(planetsUrl);
     const climate = document.getElementById('climate-select').value;
@@ -96,7 +93,6 @@ async function filterByClimate() {
     displayPlanets(filteredPlanets);
 }
 
-// Función para cargar y mostrar opciones en el menú
 async function populateSelectMenu(menuId, getOptionValue) {
     const planets = await fetchAllPlanets(planetsUrl);
     const select = document.getElementById(menuId);
@@ -112,7 +108,7 @@ async function populateSelectMenu(menuId, getOptionValue) {
     });
 }
 
-// Función para alternar la visibilidad del menú de residentes
+
 function toggleResidentsMenu() {
     const menu = document.getElementById('residents-menu');
     menu.classList.toggle('hidden');
@@ -122,7 +118,7 @@ function toggleResidentsMenu() {
     }
 }
 
-// Función para alternar la visibilidad del menú de terreno
+
 function toggleTerrainMenu() {
     const menu = document.getElementById('terrain-menu');
     menu.classList.toggle('hidden');
@@ -132,7 +128,7 @@ function toggleTerrainMenu() {
     }
 }
 
-// Función para alternar la visibilidad del menú de clima
+
 function toggleClimateMenu() {
     const menu = document.getElementById('climate-menu');
     menu.classList.toggle('hidden');
@@ -142,5 +138,6 @@ function toggleClimateMenu() {
     }
 }
 
-// Inicializar la página cargando los planetas
+
+
 fetchAllPlanets(planetsUrl).then(displayPlanets);

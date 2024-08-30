@@ -1,6 +1,6 @@
 const vehiclesUrl = 'https://swapi.dev/api/vehicles/';
 
-// Función para obtener todos los vehículos
+
 async function fetchAllVehicles(url) {
     let allVehicles = [];
     let nextUrl = url;
@@ -10,17 +10,17 @@ async function fetchAllVehicles(url) {
             const response = await fetch(nextUrl);
             const data = await response.json();
             allVehicles = allVehicles.concat(data.results);
-            nextUrl = data.next; // Obtén la URL de la siguiente página
+            nextUrl = data.next; 
         } catch (error) {
             console.error('Error fetching data:', error);
-            nextUrl = null; // Termina el bucle en caso de error
+            nextUrl = null; 
         }
     }
 
     return allVehicles;
 }
 
-// Función para mostrar todos los vehículos
+
 function displayVehicles(vehicles) {
     const container = document.getElementById('vehicles');
     container.innerHTML = '';
@@ -38,11 +38,11 @@ function displayVehicles(vehicles) {
     });
 }
 
-// Función para mostrar vehículos por modelo
+
 function showVehicleByModel() {
     fetchAllVehicles(vehiclesUrl).then(vehicles => {
         const select = document.getElementById('model-select');
-        const models = [...new Set(vehicles.map(v => v.model))]; // Extrae modelos únicos
+        const models = [...new Set(vehicles.map(v => v.model))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
         models.forEach(model => {
             const option = document.createElement('option');
@@ -54,7 +54,7 @@ function showVehicleByModel() {
     });
 }
 
-// Función para mostrar vehículo del modelo seleccionado
+
 function showVehicleByModelSelection() {
     const model = document.getElementById('model-select').value;
     if (!model) return;
@@ -77,7 +77,7 @@ function showVehicleByModelSelection() {
     });
 }
 
-// Función para ordenar vehículos por capacidad de carga de mayor a menor
+
 function sortByCargoCapacity() {
     fetchAllVehicles(vehiclesUrl).then(vehicles => {
         vehicles.sort((a, b) => b.cargo_capacity - a.cargo_capacity);
@@ -85,7 +85,6 @@ function sortByCargoCapacity() {
     });
 }
 
-// Función para mostrar películas en las que aparece el vehículo
 function showMoviesByVehicle() {
     fetchAllVehicles(vehiclesUrl).then(vehicles => {
         const select = document.getElementById('movies-vehicle-select');
@@ -100,7 +99,7 @@ function showMoviesByVehicle() {
     });
 }
 
-// Función para mostrar las películas del vehículo seleccionado
+
 function showMovies() {
     const vehicleUrl = document.getElementById('movies-vehicle-select').value;
     if (!vehicleUrl) return;
@@ -124,11 +123,11 @@ function showMovies() {
     });
 }
 
-// Función para mostrar vehículos por clase
+
 function showVehicleByClass() {
     fetchAllVehicles(vehiclesUrl).then(vehicles => {
         const select = document.getElementById('class-select');
-        const classes = [...new Set(vehicles.map(v => v.vehicle_class))]; // Extrae clases únicas
+        const classes = [...new Set(vehicles.map(v => v.vehicle_class))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
         classes.forEach(vehicleClass => {
             const option = document.createElement('option');
@@ -140,7 +139,7 @@ function showVehicleByClass() {
     });
 }
 
-// Función para mostrar vehículos de la clase seleccionada
+
 function showVehicleByClassSelection() {
     const vehicleClass = document.getElementById('class-select').value;
     if (!vehicleClass) return;
@@ -163,5 +162,5 @@ function showVehicleByClassSelection() {
     });
 }
 
-// Inicializar la página cargando todos los vehículos
+
 fetchAllVehicles(vehiclesUrl).then(displayVehicles);

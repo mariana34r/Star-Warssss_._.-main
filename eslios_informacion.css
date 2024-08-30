@@ -131,8 +131,8 @@ body{
 .imagen_libro1,
 .imagen_libro2,
 .imagen_libro3,
-.imagen_libro4 { /* Asumiendo que tienes una imagen_libro4 también */
-    flex: 1 1 22%; /* Aproximadamente 4 elementos por fila */
+.imagen_libro4 { 
+    flex: 1 1 22%; 
     text-align: center;
     border-radius: 10px;
     overflow: hidden;
@@ -140,14 +140,14 @@ body{
     background-color: #fffcfc48;
     transition: transform 0.3s ease;
     margin: 0 10px;
-    animation: neonPulse 3s infinite alternate; /* Aplicación de la animación */
+    animation: neonPulse 3s infinite alternate; 
 }
 
 .imagen_libro1 img,
 .imagen_libro2 img,
 .imagen_libro3 img,
-.imagen_libro4 img { /* Asegúrate de incluir todos los elementos de imagen */
-    width: 80%; /* Ajusta según el tamaño deseado */
+.imagen_libro4 img { 
+    width: 80%; 
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -214,22 +214,22 @@ body{
 .titulo-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
-    height: 100vh; /* Usa el alto completo de la ventana */
-    text-align: center; /* Alinea el texto en el centro */
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    text-align: center; 
+    padding: 20px; 
 }
 
 /* Estilo del encabezado */
 h1 {
-    font-family: 'Starjout.ttf'; /* Asegúrate de que la fuente esté correctamente definida en tu proyecto */
+    font-family: 'Starjout.ttf';
     text-shadow: 0 0 10px rgb(230, 248, 68);
     font-size: 150%;
     color: rgb(0, 0, 0);
-    margin: 0; /* Elimina el margen por defecto */
-    padding-top: 20px; /* Espacio adicional en la parte superior */
-    padding-bottom: 20px; /* Espacio adicional en la parte inferior */
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -239,28 +239,28 @@ h1 {
 
 .image-container {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente, opcional si el contenedor tiene altura fija */
-    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
-    height: auto; /* Permite que el contenedor ajuste su altura automáticamente */
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: auto; 
     margin: auto;
     margin-top: 4%;
 }
 
 .image-container img {
-    max-width: 22%; /* Ajusta el ancho máximo de la imagen del título */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Asegura que la imagen se comporte como un bloque */
-    margin-bottom: 20px; /* Espacio entre la imagen del título y el carrusel */
+    max-width: 22%; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block;
+    margin-bottom: 20px;
 }
 
-/* Para pantallas pequeñas */
+
 @media (max-width: 600px) {
     .image-container img {
-        max-width: 50%; /* Ajusta al 90% en pantallas pequeñas */
-        margin-bottom: 10px; /* Reduce el espacio para pantallas pequeñas */
-        margin-bottom: 20px; /* Añade un margen inferior para separar el texto de la imagen */
+        max-width: 50%; 
+        margin-bottom: 10px; 
+        margin-bottom: 20px; 
         margin-top: 20px;
     }
 }
@@ -269,40 +269,40 @@ h1 {
 
 .text-image-container {
     display: flex;
-    align-items: center; /* Centra verticalmente el texto y la imagen */
-    justify-content: flex-start; /* Alinea el contenido al inicio del contenedor (izquierda) */
-    margin: 0 auto; /* Ajusta el margen para centrar horizontalmente el contenedor en pantallas grandes */
-    max-width: 80%; /* Limita el ancho máximo del contenedor */
-    flex-wrap: nowrap; /* Evita el ajuste en pantallas grandes para mantener la disposición horizontal */
+    align-items: center; 
+    justify-content: flex-start; 
+    margin: 0 auto; 
+    max-width: 80%;
+    flex-wrap: nowrap; 
 }
 
 /* Estilo del texto */
 .text {
     font-family: 'Starjhol.ttf';
-    font-size: 1.5em; /* Tamaño de fuente ajustable */
-    margin-right: 20px; /* Espacio entre el texto y la imagen */
-    max-width: calc(100% - 100px); /* Ajusta el ancho máximo del texto para permitir espacio para la imagen y margen */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+    font-size: 1.5em; 
+    margin-right: 20px; 
+    max-width: calc(100% - 100px); 
+    box-sizing: border-box; 
 }
 
 /* Estilo de la imagen */
 .side-image {
-    max-width: 50%; /* Ajusta el ancho máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 8px; /* Bordes redondeados para un mejor aspecto */
+    max-width: 50%; 
+    height: auto; 
+    border-radius: 8px; 
 }
 
 
 @media (max-width: 768px) {
     .text {
-        font-size: 1.2rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        margin: 0; /* Elimina el margen en pantallas más pequeñas */
-        margin-bottom: 1.25rem; /* Añade un margen inferior para separar el texto de la imagen */
-        max-width: 100%; /* Permite que el texto ocupe el ancho completo */
+        font-size: 1.2rem; 
+        margin: 0; 
+        margin-bottom: 1.25rem; 
+        max-width: 100%; 
     }
 
     .side-image {
-        max-width: 80%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
+        max-width: 80%; 
     }
 }
 
@@ -313,8 +313,8 @@ h1 {
 
 @media (max-width: 768px) {
     h1 {
-        padding-top: 0px; /* Añade más espacio en la parte superior para pantallas pequeñas */
-        padding-bottom: 40px; /* Mantén el espacio inferior o ajústalo según sea necesario */
+        padding-top: 0px; 
+        padding-bottom: 40px; 
     }
 }
 
@@ -322,9 +322,9 @@ h1 {
 
 @media (max-width: 768px) {
     .container1 {
-        width: 80%; /* Ocupa el 100% del ancho disponible en pantallas pequeñas */
-        height: 60vh; /* Usa el 100% del alto del viewport para estirarse verticalmente */
-        padding: 10px; /* Añade un poco de relleno si es necesario */
+        width: 80%; 
+        height: 60vh; 
+        padding: 10px;
     }
 }
 
@@ -333,21 +333,21 @@ h1 {
 /* Medidas responsivas */
 @media (max-width: 768px) {
     .text-image-container {
-        flex-direction: column; /* Apila el texto y la imagen verticalmente en pantallas pequeñas */
-        align-items: center; /* Centra los elementos en pantallas pequeñas */
-        text-align: center; /* Centra el texto en pantallas pequeñas */
-        max-width: 100%; /* Permite que el contenedor ocupe el ancho completo */
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        max-width: 100%;
     }
 
     .text {
-        margin: 0; /* Elimina el margen en pantallas más pequeñas */
-        margin-bottom: 50px; /* Añade un margen inferior para separar el texto de la imagen */
-        max-width: 100%; /* Permite que el texto ocupe el ancho completo */
+        margin: 0; 
+        margin-bottom: 50px; 
+        max-width: 100%; 
     }
 
     .side-image {
-        max-width: 80%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
-        margin-bottom: 50px; /* Añade un margen inferior para separar el texto de la imagen */
+        max-width: 80%; 
+        margin-bottom: 50px; 
     }
 }
 
@@ -421,201 +421,189 @@ h1 {
     transition: color 0.3s ease; 
 }
 
-/* Estilos para pantallas pequeñas (max-width: 768px) */
 @media (max-width: 768px) {
     .libreria {
-        flex-direction: column; /* Apilar las imágenes verticalmente */
-        justify-content: center; /* Centra verticalmente los elementos */
-        align-items: center; /* Centra horizontalmente los elementos */
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center; 
     }
 
     .imagen_libro1,
     .imagen_libro2,
     .imagen_libro3 {
-        display: none; /* Oculta todas las imágenes inicialmente */
+        display: none; /
     }
 
-    /* Mostrar solo la primera imagen en pantallas pequeñas */
+  
     .imagen_libro1 {
-        display: block; /* Muestra la primera imagen */
-        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+        display: block; 
+        width: 100%;
     }
 }
 
-/* Estilos para pantallas más pequeñas (max-width: 480px) */
+
 @media (max-width: 480px) {
     .libreria {
-        flex-direction: column; /* Reiteración de estilos para pantallas más pequeñas */
-        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+        flex-direction: column; 
+        width: 100%; 
     }
 
     .imagen_libro1 img,
     .imagen_libro2 img,
     .imagen_libro3 img {
-        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+        width: 100%; 
     }
 }
-
-/* Estilos específicos para pantallas de tamaño medio (max-width: 768px y min-width: 481px) */
 @media (min-width: 481px) and (max-width: 768px) {
     .libreria {
-        flex-direction: row; /* Disposición horizontal */
-        flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
-        justify-content: space-between; /* Espacio entre imágenes */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .imagen_libro1,
     .imagen_libro2,
     .imagen_libro3,
     .imagen_libro4 {
-        flex: 1 1 48%; /* Ajusta el ancho para mostrar dos imágenes por fila */
-        margin: 10px; /* Espacio entre las imágenes */
-        box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho */
-        
+        flex: 1 1 48%;
+        margin: 10px;
+        box-sizing: border-box;
     }
 
     .imagen_libro1 img,
     .imagen_libro2 img,
     .imagen_libro3 img,
     .imagen_libro4 img {
-        width: 100%; /* Asegura que las imágenes llenen el contenedor */
-        height: auto; /* Mantiene la proporción de las imágenes */
+        width: 100%;
+        height: auto;
     }
 }
-
-
-
 
 .container4 {
     display: flex;
     justify-content: center;
     padding: 20px;
-    position: relative; /* Necesario para posicionar los botones absolutamente dentro de este contenedor */
+    position: relative;
 }
 
 .libreria2 {
     display: flex;
-    gap: 30px; /* Espacio entre los sliders */
-    position: relative; /* Necesario para posicionar los botones de navegación absolutamente en relación a este contenedor */
-    justify-content: center; /* Asegura que los elementos se centren horizontalmente */
-    flex-wrap: wrap; /* Asegura que los elementos puedan ir a la siguiente línea si es necesario */
+    gap: 30px;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .imagen_container {
     display: flex;
-    flex-direction: column; /* Coloca el texto debajo de la imagen */
+    flex-direction: column;
     align-items: center;
-    position: relative; /* Necesario para los botones de navegación */
-    width: 200px; /* Tamaño inicial del contenedor */
+    position: relative;
+    width: 200px;
     overflow: hidden;
-    border-radius: 8px; /* Opcional: bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para resaltar el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .imagen_slider {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
+    transition: transform 0.5s ease-in-out;
     width: 100%;
 }
 
 .imagen_actor {
-    min-width: 100%; /* Asegura que cada imagen ocupe todo el contenedor */
+    min-width: 100%;
     display: flex;
-    flex-direction: column; /* Coloca la imagen y el texto en columna */
-    align-items: center; /* Centra la imagen y el texto horizontalmente */
-    text-align: center; /* Centra el texto */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .imagen_actor img {
-    max-width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
-    border-radius: 8px; /* Opcional: bordes redondeados */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .imagen_texto {
-    margin-top: 10px; /* Espacio entre la imagen y el texto */
-    font-size: 14px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
     background-color: #ffffff;
 }
 
 .nav_button {
-    background-color: #f1f1f1; /* Color de fondo de las flechas */
+    background-color: #f1f1f1;
     border: none;
     border-radius: 50%;
     padding: 10px;
     font-size: 18px;
     cursor: pointer;
     position: absolute;
-    top: 50%; /* Centra verticalmente los botones */
-    transform: translateY(-50%); /* Ajusta el botón al centro verticalmente */
-    z-index: 1; /* Asegura que los botones estén por encima del contenido */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 .prev_button {
-    left: 10px; /* Ajusta la posición de la flecha izquierda */
-    transform: translateX(-50%) translateY(-50%); /* Ajusta la posición horizontalmente */
+    left: 10px;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .next_button {
-    right: 10px; /* Ajusta la posición de la flecha derecha */
-    transform: translateX(50%) translateY(-50%); /* Ajusta la posición horizontalmente */
+    right: 10px;
+    transform: translateX(50%) translateY(-50%);
 }
 
-/* Para pantallas grandes (PC) */
 @media (min-width: 1200px) {
     .libreria2 {
-        flex-direction: row; /* En pantallas grandes, muestra los elementos en una fila */
-        justify-content: center; /* Centra horizontalmente los elementos */
+        flex-direction: row;
+        justify-content: center;
     }
     .imagen_container {
-        width: calc(20% - 30px); /* Reduce el ancho de cada contenedor de imagen para que haya 5 elementos en una fila */
-        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+        width: calc(20% - 30px);
+        margin: 10px;
     }
 }
 
-/* Para pantallas medianas (3 elementos por fila) */
 @media (max-width: 1199px) and (min-width: 900px) {
     .libreria2 {
-        flex-direction: row; /* En pantallas medianas, muestra los elementos en una fila */
-        justify-content: center; /* Centra horizontalmente los elementos */
+        flex-direction: row;
+        justify-content: center;
     }
     .imagen_container {
-        width: calc(33.33% - 30px); /* Calcula el ancho de cada contenedor de imagen para 3 elementos en una fila */
-        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+        width: calc(33.33% - 30px);
+        margin: 10px;
     }
 }
 
-/* Para pantallas pequeñas (2 elementos por fila) */
 @media (max-width: 899px) and (min-width: 600px) {
     .libreria2 {
-        flex-direction: row; /* En pantallas pequeñas, muestra los elementos en una fila */
-        justify-content: center; /* Centra horizontalmente los elementos */
+        flex-direction: row;
+        justify-content: center;
     }
     .imagen_container {
-        width: calc(50% - 30px); /* Calcula el ancho de cada contenedor de imagen para 2 elementos en una fila */
-        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+        width: calc(50% - 30px);
+        margin: 10px;
     }
 }
 
-/* Para pantallas extra pequeñas (1 elemento por fila) */
 @media (max-width: 599px) {
     .libreria2 {
-        flex-direction: column; /* En pantallas extra pequeñas, muestra los elementos en una columna */
-        gap: 20px; /* Ajusta el espacio entre elementos */
-        align-items: center; /* Centra horizontalmente los elementos */
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
     .imagen_container {
-        width: 100%; /* Asegura que el contenedor de imagen ocupe el ancho completo */
+        width: 100%;
     }
 }
 
-/* Media query para dispositivos Android con pantallas menores a 600px */
 @media (max-width: 600px) {
     .imagen_container {
-        max-width: 240px; /* Ajusta el tamaño máximo para que las imágenes sean aún más grandes */
-        width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+        max-width: 240px;
+        width: 100%;
     }
 }
 
@@ -629,7 +617,9 @@ h1 {
 
 
 
-/* Estilos comunes para el menú */
+
+
+
 .medeplejable-toggle {
     position: fixed;
     top: 18px;
@@ -637,14 +627,13 @@ h1 {
     z-index: 1000;
 }
 
-/* Ocultar checkbox por defecto */
+
 .medeplejable-toggle input[type="checkbox"] {
     display: none;
 }
 
-/* Estilo del icono del menú */
 .medeplejable-icon {
-    display: none; /* Ocultar por defecto en pantallas grandes */
+    display: none; 
     cursor: pointer;
 }
 

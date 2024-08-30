@@ -13,7 +13,7 @@ const gallery = [
 
 let currentIndex = 0;
 
-// Actualizar las imágenes de la galería en el HTML
+
 function updateGallery() {
     const images = gallery[currentIndex];
     document.querySelectorAll('.imagen_libro1 img')[0].src = images[0];
@@ -21,19 +21,19 @@ function updateGallery() {
     document.querySelectorAll('.imagen_libro3 img')[0].src = images[2];
 }
 
-// Mostrar la siguiente galería
+
 function showNext() {
     currentIndex = (currentIndex + 1) % gallery.length;
     updateGallery();
 }
 
-// Mostrar la galería anterior
+
 function showPrevious() {
     currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
     updateGallery();
 }
 
-// Configuración del modal
+
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Inicializar la galería al cargar la página
+   
     updateGallery();
 });
 

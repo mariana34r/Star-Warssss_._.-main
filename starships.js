@@ -1,7 +1,7 @@
 const starshipsUrl = 'https://swapi.dev/api/starships/';
 const filmsUrl = 'https://swapi.dev/api/films/';
 
-// Función para obtener todas las naves estelares
+
 async function fetchAllStarships(url) {
     let allStarships = [];
     let nextUrl = url;
@@ -11,17 +11,16 @@ async function fetchAllStarships(url) {
             const response = await fetch(nextUrl);
             const data = await response.json();
             allStarships = allStarships.concat(data.results);
-            nextUrl = data.next; // Obtén la URL de la siguiente página
+            nextUrl = data.next; 
         } catch (error) {
             console.error('Error fetching data:', error);
-            nextUrl = null; // Termina el bucle en caso de error
+            nextUrl = null; 
         }
     }
 
     return allStarships;
 }
 
-// Función para obtener todas las películas
 async function fetchAllFilms(url) {
     let allFilms = [];
     let nextUrl = url;
@@ -31,17 +30,17 @@ async function fetchAllFilms(url) {
             const response = await fetch(nextUrl);
             const data = await response.json();
             allFilms = allFilms.concat(data.results);
-            nextUrl = data.next; // Obtén la URL de la siguiente página
+            nextUrl = data.next; 
         } catch (error) {
             console.error('Error fetching data:', error);
-            nextUrl = null; // Termina el bucle en caso de error
+            nextUrl = null; 
         }
     }
 
     return allFilms;
 }
 
-// Función para mostrar naves estelares con todos los datos
+
 function displayStarships(starships) {
     const container = document.getElementById('starships');
     container.innerHTML = '';
@@ -59,14 +58,14 @@ function displayStarships(starships) {
     });
 }
 
-// Mostrar todas las naves estelares al inicio
+
 fetchAllStarships(starshipsUrl).then(displayStarships);
 
-// Función para mostrar naves estelares por manufacturer
+
 function showStarshipsByManufacturer() {
     fetchAllStarships(starshipsUrl).then(starships => {
         const select = document.getElementById('manufacturer-select');
-        const manufacturers = [...new Set(starships.map(s => s.manufacturer))]; // Extrae fabricantes únicos
+        const manufacturers = [...new Set(starships.map(s => s.manufacturer))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
         manufacturers.forEach(manufacturer => {
             const option = document.createElement('option');
@@ -78,7 +77,7 @@ function showStarshipsByManufacturer() {
     });
 }
 
-// Función para mostrar naves del fabricante seleccionado
+
 function showStarshipsByManufacturerSelection() {
     const manufacturer = document.getElementById('manufacturer-select').value;
     if (!manufacturer) return;
@@ -87,11 +86,11 @@ function showStarshipsByManufacturerSelection() {
         const selectedStarships = starships.filter(s => s.manufacturer === manufacturer);
         const container = document.getElementById('starships');
         container.innerHTML = `<h2>Naves del fabricante ${manufacturer}</h2>`;
-        displayStarships(selectedStarships); // Muestra todos los datos
+        displayStarships(selectedStarships);
     });
 }
 
-// Función para mostrar naves por consumables
+
 function showStarshipsByConsumables() {
     fetchAllStarships(starshipsUrl).then(starships => {
         const container = document.getElementById('starships');
@@ -108,7 +107,6 @@ function showStarshipsByConsumables() {
     });
 }
 
-// Función para mostrar naves estelares con solo nombre y clase
 function displayStarshipsByClass(starships) {
     const container = document.getElementById('starships');
     container.innerHTML = '';
@@ -124,11 +122,11 @@ function displayStarshipsByClass(starships) {
     });
 }
 
-// Función para mostrar naves por clase de starship
+
 function showStarshipsByClass() {
     fetchAllStarships(starshipsUrl).then(starships => {
         const select = document.getElementById('class-select');
-        const classes = [...new Set(starships.map(s => s.starship_class))]; // Extrae clases únicas
+        const classes = [...new Set(starships.map(s => s.starship_class))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
         classes.forEach(starshipClass => {
             const option = document.createElement('option');
@@ -140,7 +138,8 @@ function showStarshipsByClass() {
     });
 }
 
-// Función para mostrar naves de la clase seleccionada
+
+
 function showStarshipsByClassSelection() {
     const starshipClass = document.getElementById('class-select').value;
     if (!starshipClass) return;
@@ -149,11 +148,11 @@ function showStarshipsByClassSelection() {
         const selectedStarships = starships.filter(s => s.starship_class === starshipClass);
         const container = document.getElementById('starships');
         container.innerHTML = `<h2>Naves de la clase ${starshipClass}</h2>`;
-        displayStarshipsByClass(selectedStarships); // Muestra solo nombre y clase
+        displayStarshipsByClass(selectedStarships); 
     });
 }
 
-// Función para mostrar naves por películas
+
 function showStarshipsByFilms() {
     fetchAllStarships(starshipsUrl).then(starships => {
         fetchAllFilms(filmsUrl).then(films => {

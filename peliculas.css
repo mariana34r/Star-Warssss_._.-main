@@ -5,18 +5,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     width: 100%;
-
-
-
-
 }
-
-
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    text-align: center; /* Centra el título */
+    text-align: center;
     font-family: 'Starjout.ttf';
     font-size: 48px;
     margin-top: 20px;
@@ -26,9 +20,6 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-
-
-
 .hidden {
     display: none;
 }
@@ -36,7 +27,7 @@ h1 {
 #filters {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra los botones horizontalmente */
+    justify-content: center;
     margin: 20px;
 }
 
@@ -71,9 +62,6 @@ button {
     color: #ddd;
 }
 
-
-
-
 #characters-menu, #director-menu, #starships-menu {
     margin-top: 10px;
 }
@@ -82,75 +70,38 @@ button {
     padding: 5px;
 }
 
-
-
-
 .menu {
-    display: none; /* Hide the menu by default */
-}
-
-
-/* Show the menu on small screens only */
-@media (max-width: 768px) {
- 
-    #menu {
-        display: none; /* Hide the menu by default */
-    }
-     
-}
-
-
-
-
-
-@media (min-width: 769px) {
-    .menu {
-        display: none; /* Hide the menu on larger screens */
-    }
-}
-
-
-
-
-
-
-
-
-
-/* Estilos generales para el menú */
-.menu {
-    display: block; /* Mostrar el menú por defecto en todas las pantallas */
-    background-color: rgba(255, 255, 255, 0.253); /* Fondo translúcido */
+    display: block;
+    background-color: rgba(255, 255, 255, 0.253);
     position: fixed;
-    bottom: 0; /* Posición en la parte inferior */
-    width: 100%; /* Ancho completo */
+    bottom: 0;
+    width: 100%;
     padding: 0;
-    border-top-left-radius: 35px; /* Esquinas redondeadas superiores izquierda */
-    border-top-right-radius: 35px; /* Esquinas redondeadas superiores derecha */
-    border: 2px solid #ddd; /* Borde opcional */
-    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border: 2px solid #ddd;
+    z-index: 1000;
 }
 
-/* Estilos para la lista dentro del menú */
 .menu ul {
     display: flex;
-    justify-content: center; /* Centra los ítems horizontalmente */
+    justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 .menu li {
-    margin: 0 15px; /* Ajusta el margen entre elementos */
+    margin: 0 15px;
 }
 
 .menu a img {
-    width: 75px; /* Ajusta el tamaño de las imágenes */
+    width: 75px;
     height: auto;
     display: block;
     border: 2px solid #ffffff;
-    border-radius: 50%; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu a {
@@ -159,17 +110,16 @@ button {
 }
 
 .menu a:hover img {
-    opacity: 0.8; 
+    opacity: 0.8;
     transform: scale(1.2);
 }
 
-/* Opcional: estilos para pantallas muy grandes si es necesario */
 @media (min-width: 769px) {
     .menu {
-        display: block; /* Asegura que el menú se muestra también en pantallas grandes */
-        position: fixed; /* Mantiene la posición fija */
+        display: block;
+        position: fixed;
         bottom: 0;
-        width: 100%; /* Mantiene el ancho completo */
+        width: 100%;
         padding: 0;
         border-top-left-radius: 35px;
         border-top-right-radius: 35px;
@@ -177,59 +127,36 @@ button {
     }
 
     .menu ul {
-        justify-content: center; /* Centra los ítems horizontalmente */
+        justify-content: center;
     }
 
     .menu li {
-        margin: 0 15px; /* Ajusta el margen entre elementos */
+        margin: 0 15px;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos comunes para el menú */
 .medeplejable-toggle {
     position: fixed;
     top: 28px;
     right: 52px;
     z-index: 1000;
-    display: none; /* Oculta el botón por defecto */
+    display: none;
 }
 
-/* Ocultar checkbox por defecto */
 .medeplejable-toggle input[type="checkbox"] {
     display: none;
 }
 
-/* Estilo del icono del menú */
 .medeplejable-icon {
     cursor: pointer;
 }
 
 .medeplejable-icon img {
-    width: 68px; 
+    width: 68px;
     height: auto;
-    border-radius: 50%; 
-    border: 2px solid #dfdfdf; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 50%;
+    border: 2px solid #dfdfdf;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -238,12 +165,11 @@ button {
     transform: scale(1.2);
 }
 
-/* Menú desplegable */
 .medeplejable {
-    display: none; /* Oculta el menú por defecto */
+    display: none;
     position: absolute;
-    top: 80px; 
-    right: 10px; 
+    top: 80px;
+    right: 10px;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -274,33 +200,28 @@ button {
     color: #ff0c0c;
 }
 
-/* Mostrar el menú desplegable cuando el checkbox está marcado */
 .medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
     display: block;
 }
 
 .medeplejable-toggle input[type="checkbox"]:checked + .medeplejable-icon img {
-    transform: rotate(90deg); /* Rote la imagen cuando el menú está abierto */
+    transform: rotate(90deg);
 }
 
-/* Mostrar el botón solo en pantallas pequeñas */
 @media (max-width: 768px) {
     .medeplejable-toggle {
-        display: block; /* Muestra el botón en pantallas pequeñas */
+        display: block;
     }
 
     .medeplejable-icon {
-        display: inline-block; /* Muestra el icono en pantallas pequeñas */
+        display: inline-block;
     }
-}
 
-/* Estilo adicional para hacer el menú visible en pantallas pequeñas */
-@media (max-width: 768px) {
     .medeplejable {
-        display: none; /* Asegura que el menú está oculto por defecto en pantallas pequeñas */
+        display: none;
     }
     
     .medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
-        display: block; /* Muestra el menú cuando el checkbox está marcado */
+        display: block;
     }
 }
