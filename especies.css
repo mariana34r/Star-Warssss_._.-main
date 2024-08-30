@@ -25,7 +25,11 @@ h1 {
 
 
 
-
+@font-face {
+    font-family: 'Starjout.ttf';
+    src: url(Starjedi.ttf)
+    format('TrueType');
+}
 
 
 
@@ -46,6 +50,17 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    font-family: 'Starjout.ttf';
+    text-shadow: 0 0 10px rgb(141, 190, 26);
+    color: #000000;
+}
+
+
+
+
+button:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
 .container {

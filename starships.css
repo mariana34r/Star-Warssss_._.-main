@@ -20,6 +20,23 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+
+
+
+
+
+@font-face {
+    font-family: 'Starjout.ttf';
+    src: url(Starjedi.ttf)
+    format('TrueType');
+}
+
+
+
+
+
+
+
 #menu {
     display: flex;
     justify-content: center;
