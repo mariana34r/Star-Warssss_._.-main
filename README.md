@@ -47,7 +47,7 @@ Esta Pagina cuenta Aquí encontrarás información sobre todo el universo de est
 ### Captura de la Seccion Infomacion 🚀
 ![Captura del Home](https://github.com/user-attachments/assets/086cc27f-9db2-41f5-bbf1-61091351a80b)
 ![Captura del Home](https://github.com/user-attachments/assets/f7c1ad3d-da37-424d-8f4f-89c802ccc986)
-![Captura del Home](https://github.com/user-attachments/assets/5a817258-c064-42a1-96a0-41abfec5799e)
+![Captura del Home](https://github.com/user-attachments/assets/45355a81-d2c8-4fe4-bccf-979cee1cad5f)
 
 
 
