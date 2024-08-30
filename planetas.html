@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetas de Star Wars</title>
+    <link rel="stylesheet" href="planetas.css">
+</head>
+<body>
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <h1>Planetas</h1>
+    <div id="filters">
+        <button onclick="sortByPopulation()">Ordenar por Población (Mayor a Menor)</button>
+        <button onclick="toggleResidentsMenu()">Filtrar por Residentes</button>
+        <div id="residents-menu" class="hidden">
+            <label for="planet-select">Selecciona un planeta:</label>
+            <select id="planet-select" onchange="filterByPlanetResidents()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de planetas se cargarán aquí -->
+            </select>
+        </div>
+        <button onclick="toggleTerrainMenu()">Filtrar por Tipo de Terreno</button>
+        <div id="terrain-menu" class="hidden">
+            <label for="terrain-select">Selecciona un tipo de terreno:</label>
+            <select id="terrain-select" onchange="filterByTerrain()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de tipos de terreno se cargarán aquí -->
+            </select>
+        </div>
+        <button onclick="toggleClimateMenu()">Filtrar por Clima</button>
+        <div id="climate-menu" class="hidden">
+            <label for="climate-select">Selecciona un clima:</label>
+            <select id="climate-select" onchange="filterByClimate()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de climas se cargarán aquí -->
+            </select>
+        </div>
+    </div>
+    <div id="planets" class="container">
+        <!-- Planetas se cargarán aquí -->
+    </div>
+    <script src="planetas.js"></script>
+</body>
+</html>

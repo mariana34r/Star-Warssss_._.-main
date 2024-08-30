@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos de Star Wars</title>
+    <link rel="stylesheet" href="vehicles.css">
+</head>
+<body>
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Vehicles</h1>
+    <div id="filters">
+        <button onclick="showVehicleByModel()">Modelo de Vehículos</button>
+        <div id="model-menu" class="hidden">
+            <label for="model-select">Selecciona un modelo:</label>
+            <select id="model-select" onchange="showVehicleByModelSelection()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de modelos se cargarán aquí -->
+            </select>
+        </div>
+
+        <button onclick="sortByCargoCapacity()">Ordenar por Capacidad de Carga</button>
+
+        <button onclick="showMoviesByVehicle()">Películas en las que Aparece</button>
+        <div id="movies-menu" class="hidden">
+            <label for="movies-vehicle-select">Selecciona un vehículo:</label>
+            <select id="movies-vehicle-select" onchange="showMovies()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de vehículos se cargarán aquí -->
+            </select>
+        </div>
+
+        <button onclick="showVehicleByClass()">Clase de Vehículos</button>
+        <div id="class-menu" class="hidden">
+            <label for="class-select">Selecciona una clase:</label>
+            <select id="class-select" onchange="showVehicleByClassSelection()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de clases se cargarán aquí -->
+            </select>
+        </div>
+    </div>
+    <div id="vehicles" class="container">
+        <!-- Vehículos se cargarán aquí -->
+    </div>
+    <script src="vehicles.js"></script>
+</body>
+</html>

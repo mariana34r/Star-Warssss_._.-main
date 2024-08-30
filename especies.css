@@ -1,0 +1,311 @@
+body {
+    background-size: cover;
+    background-image: url('https://i.pinimg.com/originals/59/45/ff/5945ff665e2ecb8fab0d68343278b225.gif');
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Centra el título */
+    font-family: 'Starjout.ttf';
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-hiperespacial-3d-efecto-tunel-urdimbre_1048-12526.jpg');
+    width: 250px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgb(255, 255, 255);
+    text-shadow: 
+        1px 1px 0 #0044ff2d, 
+        -1px -1px 0 #5b633f, 
+        1px -1px 0 #ffffff27, 
+        -1px 1px 0 #000, 
+        0 0 5px #282921;
+    color: #ddd;
+}
+
+
+
+
+
+
+#classification-menu, #language-menu, #eye-color-menu {
+    margin-top: 10px;
+}
+
+#classification-select, #language-select, #eye-color-select {
+    padding: 5px;
+}
+
+
+
+
+
+.menu {
+    display: none; /* Hide the menu by default */
+}
+
+
+/* Show the menu on small screens only */
+@media (max-width: 768px) {
+ 
+    #menu {
+        display: none; /* Hide the menu by default */
+    }
+     
+}
+
+
+
+
+
+@media (min-width: 769px) {
+    .menu {
+        display: none; /* Hide the menu on larger screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Estilos generales para el menú */
+.menu {
+    display: block; /* Mostrar el menú por defecto en todas las pantallas */
+    background-color: rgba(255, 255, 255, 0.253); /* Fondo translúcido */
+    position: fixed;
+    bottom: 0; /* Posición en la parte inferior */
+    width: 100%; /* Ancho completo */
+    padding: 0;
+    border-top-left-radius: 35px; /* Esquinas redondeadas superiores izquierda */
+    border-top-right-radius: 35px; /* Esquinas redondeadas superiores derecha */
+    border: 2px solid #ddd; /* Borde opcional */
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+/* Estilos para la lista dentro del menú */
+.menu ul {
+    display: flex;
+    justify-content: center; /* Centra los ítems horizontalmente */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px; /* Ajusta el margen entre elementos */
+}
+
+.menu a img {
+    width: 75px; /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    display: block;
+    border: 2px solid #ffffff;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.menu a {
+    display: block;
+    text-align: center;
+}
+
+.menu a:hover img {
+    opacity: 0.8; 
+    transform: scale(1.2);
+}
+
+/* Opcional: estilos para pantallas muy grandes si es necesario */
+@media (min-width: 769px) {
+    .menu {
+        display: block; /* Asegura que el menú se muestra también en pantallas grandes */
+        position: fixed; /* Mantiene la posición fija */
+        bottom: 0;
+        width: 100%; /* Mantiene el ancho completo */
+        padding: 0;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border: 2px solid #ddd;
+    }
+
+    .menu ul {
+        justify-content: center; /* Centra los ítems horizontalmente */
+    }
+
+    .menu li {
+        margin: 0 15px; /* Ajusta el margen entre elementos */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos comunes para el menú */
+.medeplejable-toggle {
+    position: fixed;
+    top: 28px;
+    right: 52px;
+    z-index: 1000;
+    display: none; /* Oculta el botón por defecto */
+}
+
+/* Ocultar checkbox por defecto */
+.medeplejable-toggle input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo del icono del menú */
+.medeplejable-icon {
+    cursor: pointer;
+}
+
+.medeplejable-icon img {
+    width: 68px; 
+    height: auto;
+    border-radius: 50%; 
+    border: 2px solid #dfdfdf; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.medeplejable-icon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* Menú desplegable */
+.medeplejable {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 80px; 
+    right: 10px; 
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.medeplejable ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.medeplejable ul li {
+    margin-bottom: 10px;
+}
+
+.medeplejable ul li button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.medeplejable ul li button:hover {
+    color: #ff0c0c;
+}
+
+/* Mostrar el menú desplegable cuando el checkbox está marcado */
+.medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
+    display: block;
+}
+
+.medeplejable-toggle input[type="checkbox"]:checked + .medeplejable-icon img {
+    transform: rotate(90deg); /* Rote la imagen cuando el menú está abierto */
+}
+
+/* Mostrar el botón solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .medeplejable-toggle {
+        display: block; /* Muestra el botón en pantallas pequeñas */
+    }
+
+    .medeplejable-icon {
+        display: inline-block; /* Muestra el icono en pantallas pequeñas */
+    }
+}
+
+/* Estilo adicional para hacer el menú visible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .medeplejable {
+        display: none; /* Asegura que el menú está oculto por defecto en pantallas pequeñas */
+    }
+    
+    .medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
+        display: block; /* Muestra el menú cuando el checkbox está marcado */
+    }
+}
+

@@ -1,0 +1,718 @@
+body{
+    background-size: cover;
+    background-image: url("https://www.todofondos.net/wp-content/uploads/star-wars-fondo-de-pantalla-de-la-estrella-de-la-muerte.png");
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+
+
+.menu {
+    background-color: #ffffff00;
+    padding: 0px;
+    margin-top: 3%;
+    top: 0; 
+    right: 0;
+    position: fixed;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a img {
+    width: 75px; 
+    height: auto;
+    display: block;
+    border: 2px solid #ffffff;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.068); 
+}
+
+.menu a {
+    display: block;
+    text-align: center;
+}
+
+.menu a:hover img {
+    opacity: 0.8; 
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; 
+    }
+
+    body {
+        background-position: right;
+    }
+}
+
+
+
+
+
+
+.container1 {
+    width: 60%;
+    height: 60vh;
+    background-color: #dfdfdf3f;
+    border: 1px solid #ffffff; /* Color inicial del borde */
+    position: relative;
+    display: block;
+    margin: auto;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+    width: 60%;
+    height: 60vh;
+    background-color: #fffbfb00;
+    position: relative;
+    display: block;
+    margin: auto;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container3 {
+    width: 60%;
+    height: 68vh;
+    background-color: #dfdfdf00;
+    
+    position: relative;
+    display: block;
+    margin: auto;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+.libreria {
+    max-width: 1200px;
+    margin: 80px auto; 
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+
+
+
+
+
+.imagen_libro1,
+.imagen_libro2,
+.imagen_libro3,
+.imagen_libro4 { /* Asumiendo que tienes una imagen_libro4 también */
+    flex: 1 1 22%; /* Aproximadamente 4 elementos por fila */
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    background-color: #fffcfc48;
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+    animation: neonPulse 3s infinite alternate; /* Aplicación de la animación */
+}
+
+.imagen_libro1 img,
+.imagen_libro2 img,
+.imagen_libro3 img,
+.imagen_libro4 img { /* Asegúrate de incluir todos los elementos de imagen */
+    width: 80%; /* Ajusta según el tamaño deseado */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.imagen_libro1:hover,
+.imagen_libro2:hover,
+.imagen_libro3:hover,
+.imagen_libro4:hover {
+    transform: scale(1.2);
+}
+
+
+/*Segunda Seccion */
+
+.titulo_secundario {
+    text-align: center;
+    font-family: 'Starjout.ttf';
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
+    transition: transform 0.3s ease;
+}
+
+
+
+.titulo_secundario:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    font-family: 'MeltedMoster';
+    color: #dbff0c;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Starjout.ttf';
+    src: url(Starjout.ttf) format('TrueType');
+}
+
+
+@font-face {
+    font-family: 'Starjhol.ttf';
+    src: url(Roboto-BoldCondensed.ttf) format('TrueType');
+}
+
+
+
+
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    height: 100vh; /* Usa el alto completo de la ventana */
+    text-align: center; /* Alinea el texto en el centro */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+}
+
+/* Estilo del encabezado */
+h1 {
+    font-family: 'Starjout.ttf'; /* Asegúrate de que la fuente esté correctamente definida en tu proyecto */
+    text-shadow: 0 0 10px rgb(230, 248, 68);
+    font-size: 150%;
+    color: rgb(0, 0, 0);
+    margin: 0; /* Elimina el margen por defecto */
+    padding-top: 20px; /* Espacio adicional en la parte superior */
+    padding-bottom: 20px; /* Espacio adicional en la parte inferior */
+}
+
+
+
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente, opcional si el contenedor tiene altura fija */
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+    height: auto; /* Permite que el contenedor ajuste su altura automáticamente */
+    margin: auto;
+    margin-top: 4%;
+}
+
+.image-container img {
+    max-width: 22%; /* Ajusta el ancho máximo de la imagen del título */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin-bottom: 20px; /* Espacio entre la imagen del título y el carrusel */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 600px) {
+    .image-container img {
+        max-width: 50%; /* Ajusta al 90% en pantallas pequeñas */
+        margin-bottom: 10px; /* Reduce el espacio para pantallas pequeñas */
+        margin-bottom: 20px; /* Añade un margen inferior para separar el texto de la imagen */
+        margin-top: 20px;
+    }
+}
+
+
+
+.text-image-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+    justify-content: flex-start; /* Alinea el contenido al inicio del contenedor (izquierda) */
+    margin: 0 auto; /* Ajusta el margen para centrar horizontalmente el contenedor en pantallas grandes */
+    max-width: 80%; /* Limita el ancho máximo del contenedor */
+    flex-wrap: nowrap; /* Evita el ajuste en pantallas grandes para mantener la disposición horizontal */
+}
+
+/* Estilo del texto */
+.text {
+    font-family: 'Starjhol.ttf';
+    font-size: 1.5em; /* Tamaño de fuente ajustable */
+    margin-right: 20px; /* Espacio entre el texto y la imagen */
+    max-width: calc(100% - 100px); /* Ajusta el ancho máximo del texto para permitir espacio para la imagen y margen */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+}
+
+/* Estilo de la imagen */
+.side-image {
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para un mejor aspecto */
+}
+
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        margin: 0; /* Elimina el margen en pantallas más pequeñas */
+        margin-bottom: 1.25rem; /* Añade un margen inferior para separar el texto de la imagen */
+        max-width: 100%; /* Permite que el texto ocupe el ancho completo */
+    }
+
+    .side-image {
+        max-width: 80%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
+    }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    h1 {
+        padding-top: 0px; /* Añade más espacio en la parte superior para pantallas pequeñas */
+        padding-bottom: 40px; /* Mantén el espacio inferior o ajústalo según sea necesario */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .container1 {
+        width: 80%; /* Ocupa el 100% del ancho disponible en pantallas pequeñas */
+        height: 60vh; /* Usa el 100% del alto del viewport para estirarse verticalmente */
+        padding: 10px; /* Añade un poco de relleno si es necesario */
+    }
+}
+
+
+
+/* Medidas responsivas */
+@media (max-width: 768px) {
+    .text-image-container {
+        flex-direction: column; /* Apila el texto y la imagen verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra los elementos en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+        max-width: 100%; /* Permite que el contenedor ocupe el ancho completo */
+    }
+
+    .text {
+        margin: 0; /* Elimina el margen en pantallas más pequeñas */
+        margin-bottom: 50px; /* Añade un margen inferior para separar el texto de la imagen */
+        max-width: 100%; /* Permite que el texto ocupe el ancho completo */
+    }
+
+    .side-image {
+        max-width: 80%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
+        margin-bottom: 50px; /* Añade un margen inferior para separar el texto de la imagen */
+    }
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow-left {
+    left: -40px;
+}
+
+.arrow-right {
+    right: -40px;
+}
+
+.arrow img {
+    width: 15px;
+    height: 15px;
+}
+
+
+
+.arrow2 {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow2-left {
+    left: -40px;
+}
+
+.arrow2-right {
+    right: -40px;
+}
+
+.arrow2 img {
+    width: 15px;
+    height: 15px;
+}
+
+
+
+.imagen_libro1 p,
+.imagen_libro2 p,
+.imagen_libro3 p,
+.imagen_libro4 p {
+    font-size: 26px;
+    color: #000000; 
+    line-height: 1.5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease; 
+}
+
+/* Estilos para pantallas pequeñas (max-width: 768px) */
+@media (max-width: 768px) {
+    .libreria {
+        flex-direction: column; /* Apilar las imágenes verticalmente */
+        justify-content: center; /* Centra verticalmente los elementos */
+        align-items: center; /* Centra horizontalmente los elementos */
+    }
+
+    .imagen_libro1,
+    .imagen_libro2,
+    .imagen_libro3 {
+        display: none; /* Oculta todas las imágenes inicialmente */
+    }
+
+    /* Mostrar solo la primera imagen en pantallas pequeñas */
+    .imagen_libro1 {
+        display: block; /* Muestra la primera imagen */
+        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    }
+}
+
+/* Estilos para pantallas más pequeñas (max-width: 480px) */
+@media (max-width: 480px) {
+    .libreria {
+        flex-direction: column; /* Reiteración de estilos para pantallas más pequeñas */
+        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    }
+
+    .imagen_libro1 img,
+    .imagen_libro2 img,
+    .imagen_libro3 img {
+        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    }
+}
+
+/* Estilos específicos para pantallas de tamaño medio (max-width: 768px y min-width: 481px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .libreria {
+        flex-direction: row; /* Disposición horizontal */
+        flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+        justify-content: space-between; /* Espacio entre imágenes */
+    }
+
+    .imagen_libro1,
+    .imagen_libro2,
+    .imagen_libro3,
+    .imagen_libro4 {
+        flex: 1 1 48%; /* Ajusta el ancho para mostrar dos imágenes por fila */
+        margin: 10px; /* Espacio entre las imágenes */
+        box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho */
+        
+    }
+
+    .imagen_libro1 img,
+    .imagen_libro2 img,
+    .imagen_libro3 img,
+    .imagen_libro4 img {
+        width: 100%; /* Asegura que las imágenes llenen el contenedor */
+        height: auto; /* Mantiene la proporción de las imágenes */
+    }
+}
+
+
+
+
+.container4 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: relative; /* Necesario para posicionar los botones absolutamente dentro de este contenedor */
+}
+
+.libreria2 {
+    display: flex;
+    gap: 30px; /* Espacio entre los sliders */
+    position: relative; /* Necesario para posicionar los botones de navegación absolutamente en relación a este contenedor */
+    justify-content: center; /* Asegura que los elementos se centren horizontalmente */
+    flex-wrap: wrap; /* Asegura que los elementos puedan ir a la siguiente línea si es necesario */
+}
+
+.imagen_container {
+    display: flex;
+    flex-direction: column; /* Coloca el texto debajo de la imagen */
+    align-items: center;
+    position: relative; /* Necesario para los botones de navegación */
+    width: 200px; /* Tamaño inicial del contenedor */
+    overflow: hidden;
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para resaltar el contenedor */
+}
+
+.imagen_slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
+    width: 100%;
+}
+
+.imagen_actor {
+    min-width: 100%; /* Asegura que cada imagen ocupe todo el contenedor */
+    display: flex;
+    flex-direction: column; /* Coloca la imagen y el texto en columna */
+    align-items: center; /* Centra la imagen y el texto horizontalmente */
+    text-align: center; /* Centra el texto */
+}
+
+.imagen_actor img {
+    max-width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+.imagen_texto {
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+    font-size: 14px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    background-color: #ffffff;
+}
+
+.nav_button {
+    background-color: #f1f1f1; /* Color de fondo de las flechas */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Centra verticalmente los botones */
+    transform: translateY(-50%); /* Ajusta el botón al centro verticalmente */
+    z-index: 1; /* Asegura que los botones estén por encima del contenido */
+}
+
+.prev_button {
+    left: 10px; /* Ajusta la posición de la flecha izquierda */
+    transform: translateX(-50%) translateY(-50%); /* Ajusta la posición horizontalmente */
+}
+
+.next_button {
+    right: 10px; /* Ajusta la posición de la flecha derecha */
+    transform: translateX(50%) translateY(-50%); /* Ajusta la posición horizontalmente */
+}
+
+/* Para pantallas grandes (PC) */
+@media (min-width: 1200px) {
+    .libreria2 {
+        flex-direction: row; /* En pantallas grandes, muestra los elementos en una fila */
+        justify-content: center; /* Centra horizontalmente los elementos */
+    }
+    .imagen_container {
+        width: calc(20% - 30px); /* Reduce el ancho de cada contenedor de imagen para que haya 5 elementos en una fila */
+        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+    }
+}
+
+/* Para pantallas medianas (3 elementos por fila) */
+@media (max-width: 1199px) and (min-width: 900px) {
+    .libreria2 {
+        flex-direction: row; /* En pantallas medianas, muestra los elementos en una fila */
+        justify-content: center; /* Centra horizontalmente los elementos */
+    }
+    .imagen_container {
+        width: calc(33.33% - 30px); /* Calcula el ancho de cada contenedor de imagen para 3 elementos en una fila */
+        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+    }
+}
+
+/* Para pantallas pequeñas (2 elementos por fila) */
+@media (max-width: 899px) and (min-width: 600px) {
+    .libreria2 {
+        flex-direction: row; /* En pantallas pequeñas, muestra los elementos en una fila */
+        justify-content: center; /* Centra horizontalmente los elementos */
+    }
+    .imagen_container {
+        width: calc(50% - 30px); /* Calcula el ancho de cada contenedor de imagen para 2 elementos en una fila */
+        margin: 10px; /* Espacio alrededor de cada contenedor de imagen para centrar y dar un margen */
+    }
+}
+
+/* Para pantallas extra pequeñas (1 elemento por fila) */
+@media (max-width: 599px) {
+    .libreria2 {
+        flex-direction: column; /* En pantallas extra pequeñas, muestra los elementos en una columna */
+        gap: 20px; /* Ajusta el espacio entre elementos */
+        align-items: center; /* Centra horizontalmente los elementos */
+    }
+    .imagen_container {
+        width: 100%; /* Asegura que el contenedor de imagen ocupe el ancho completo */
+    }
+}
+
+/* Media query para dispositivos Android con pantallas menores a 600px */
+@media (max-width: 600px) {
+    .imagen_container {
+        max-width: 240px; /* Ajusta el tamaño máximo para que las imágenes sean aún más grandes */
+        width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos comunes para el menú */
+.medeplejable-toggle {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Ocultar checkbox por defecto */
+.medeplejable-toggle input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo del icono del menú */
+.medeplejable-icon {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+    cursor: pointer;
+}
+
+.medeplejable-icon img {
+    width: 48px; 
+    height: auto;
+    border-radius: 50%; 
+    border: 2px solid #dfdfdf; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.medeplejable-icon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.medeplejable {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 80px; 
+    right: 10px; 
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.medeplejable ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.medeplejable ul li {
+    margin-bottom: 10px;
+}
+
+.medeplejable ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.medeplejable ul li a:hover {
+    color: #ff0c0c;
+}
+
+/* Mostrar el menú solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .medeplejable-toggle {
+        display: block; /* Muestra el toggle en pantallas pequeñas */
+    }
+
+    .medeplejable-icon {
+        display: inline-block; /* Muestra el icono en pantallas pequeñas */
+    }
+
+    .medeplejable {
+        display: none; /* Asegura que el menú esté oculto por defecto en pantallas pequeñas */
+    }
+
+    .medeplejable-toggle input[type="checkbox"]:checked ~ .medeplejable {
+        display: block; /* Muestra el menú cuando el checkbox está marcado */
+    }
+
+    .medeplejable-toggle input[type="checkbox"]:checked + .medeplejable-icon img {
+        transform: rotate(90deg); /* Rote la imagen cuando el menú está abierto */
+    }
+}

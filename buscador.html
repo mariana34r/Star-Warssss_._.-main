@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="pngwing.com.png">
+    <script src="busc2.js"></script>
+    <!-- Incluye Bootstrap desde un CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'MiFuente';
+            src: url('Starjedi.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'MiFuente', sans-serif;
+            background-color: #f0f0f0;
+            margin: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscador.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Buscador"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Informacion"></a></li>
+        </ul>
+    </nav>
+
+
+   
+
+
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Star Wars </h1>
+
+        <div class="form-group">
+            <input type="text" id="search-input" class="form-control" placeholder="Search Star Wars Characters, Planets, Starships, Vehicles, or Species">
+        </div>
+
+        <div id="results" class="row"></div>
+
+    </div>
+    <header class="container_header">
+        <nav>
+            <button id="menu-button">Filtar por</button>
+            <ul id="nav-list" class="hidden">
+                <li><button data-api="people">Personajes</button></li>
+                <li><button data-api="planets">Planetas</button></li>
+                <li><button data-api="films">Películas</button></li>
+                <li><button data-api="species">Especies</button></li>
+                <li><button data-api="vehicles">Vehículos</button></li>
+                <li><button data-api="starships">Naves Estelares</button></li>
+                <li><button data-api="planets_population">Planetas con Población</button></li>
+                <li><button data-api="people_gender">Personas por Género</button></li>
+                <li><button data-api="films_release_date">Películas por Fecha de Lanzamiento</button></li>
+                <li><button data-api="starships_model">Naves Estelares por Modelo</button></li>
+                <li><button data-api="vehicles_manufacturer">Vehículos por Fabricante</button></li>
+                <li><button data-api="species_classification">Especies por Clasificación</button></li>
+                <li><button data-api="planets_terrain">Planetas por Terreno</button></li>
+                <li><button data-api="people_height">Personas por Altura</button></li>
+                <li><button data-api="starships_manufacturer">Naves Estelares por Fabricante</button></li>
+                <li><button data-api="films_director">Películas por Director</button></li>
+                <li><button data-api="species_average_height">Especies por Altura Promedio</button></li>
+                <li><button data-api="vehicles_model">Vehículos por Modelo</button></li>
+                <li><button data-api="people_mass">Personas por Masa</button></li>
+                <li><button data-api="planets_climate">Planetas por Clima</button></li>
+                <li><button data-api="films_title">Películas por Título</button></li>
+                <li><button data-api="species_average_lifespan">Especies por Esperanza de Vida</button></li>
+                <li><button data-api="starships_cost">Naves Estelares por Costo</button></li>
+                <li><button data-api="people_hair_color">Personas por Color de Cabello</button></li>
+                <li><button data-api="vehicles_speed">Vehículos por Velocidad</button></li>
+                <li><button data-api="films_episode">Películas por Episodio</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content">
+    </main>
+
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

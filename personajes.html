@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Star Wars</title>
+    <link rel="stylesheet" href="personajes.css">
+</head>
+<body>
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+<h1>Personajes</h1>
+    <div id="filters">
+        <button onclick="sortByHeight()">Menor a Mayor Altura</button>
+        <button onclick="filterByEyeColor()">Color de Ojos Azules</button>
+        <button onclick="sortByAge()">Mayor a Menor Edad</button>
+        <button onclick="toggleGenderMenu()">Filtrar por Género</button>
+        <div id="gender-menu" class="hidden">
+            <label for="gender-select">Selecciona el género:</label>
+            <select id="gender-select" onchange="filterByGender()">
+                <option value="">Todos</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="n/a">No especificado</option>
+            </select>
+        </div>
+    </div>
+    <div id="characters" class="container">
+        <!-- Personajes se cargarán aquí -->
+    </div>
+    <script src="personajes.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especies de Star Wars</title>
+    <link rel="stylesheet" href="especies.css">
+</head>
+<body>
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+    <h1>Especies</h1>
+
+
+
+    <div id="filters">
+        <button onclick="showSpeciesByClassification()">Clasificación</button>
+        <div id="classification-menu" class="hidden">
+            <label for="classification-select">Selecciona una clasificación:</label>
+            <select id="classification-select" onchange="showSpeciesByClassificationSelection()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de clasificaciones se cargarán aquí -->
+            </select>
+        </div>
+
+        <button onclick="showSpeciesByLanguage()">Lenguaje</button>
+        <div id="language-menu" class="hidden">
+            <label for="language-select">Selecciona un lenguaje:</label>
+            <select id="language-select" onchange="showSpeciesByLanguageSelection()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de lenguajes se cargarán aquí -->
+            </select>
+        </div>
+
+        <button onclick="showSpeciesByEyeColor()">Color de Ojos</button>
+        <div id="eye-color-menu" class="hidden">
+            <label for="eye-color-select">Selecciona un color de ojos:</label>
+            <select id="eye-color-select" onchange="showSpeciesByEyeColorSelection()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de colores de ojos se cargarán aquí -->
+            </select>
+        </div>
+
+        <button onclick="sortByAverageLifespan()">Esperanza de Vida</button>
+    </div>
+    <div id="species" class="container">
+        <!-- Especies se cargarán aquí -->
+    </div>
+    <script src="especies.js"></script>
+
+
+
+</body>
+</html>

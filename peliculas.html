@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Star Wars</title>
+    <link rel="stylesheet" href="peliculas.css">
+</head>
+<body>
+
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>peluculas</h1>
+    <div id="filters">
+        <button onclick="showCharactersByFilm()">Personajes por Película</button>
+        <div id="characters-menu" class="hidden">
+            <label for="film-select">Selecciona una película:</label>
+            <select id="film-select" onchange="showCharacters()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de películas se cargarán aquí -->
+            </select>
+        </div>
+        
+        <button onclick="showDirectorByFilm()">Director por Película</button>
+        <div id="director-menu" class="hidden">
+            <label for="director-film-select">Selecciona una película:</label>
+            <select id="director-film-select" onchange="showDirector()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de películas se cargarán aquí -->
+            </select>
+        </div>
+        
+        <button onclick="sortByReleaseDate()">Ordenar por Fecha</button>
+        
+        <button onclick="showStarshipsByFilm()">Naves por Película</button>
+        <div id="starships-menu" class="hidden">
+            <label for="starships-film-select">Selecciona una película:</label>
+            <select id="starships-film-select" onchange="showStarships()">
+                <option value="">Seleccionar</option>
+                <!-- Opciones de películas se cargarán aquí -->
+            </select>
+        </div>
+    </div>
+    <div id="films" class="container">
+        <!-- Películas se cargarán aquí -->
+    </div>
+    <script src="peliculas.js"></script>
+</body>
+</html>

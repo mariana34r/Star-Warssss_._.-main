@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starships</title>
+    <link rel="stylesheet" href="starships.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/non_2x/home-icon-vector.jpg" alt="Home"></a></li>
+            <li><a href="buscardor_oficial.html"><img src="https://st3.depositphotos.com/1507819/32085/v/450/depositphotos_320853210-stock-illustration-magnifier-vector-icon-on-black.jpg" alt="Juegos"></a></li>
+            <li><a href="informacion.html"><img src="https://st4.depositphotos.com/18270392/21909/v/450/depositphotos_219095326-stock-illustration-information-sign-icon-info-icon.jpg" alt="Libros"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+    <h1>Starships</h1>
+    <div id="menu">
+        <button onclick="showStarshipsByManufacturer()">Filtrar por Manufacturer</button>
+        <button onclick="showStarshipsByConsumables()">Mostrar Consumables</button>
+        <button onclick="showStarshipsByClass()">Filtrar por Clase</button>
+        <button onclick="showStarshipsByFilms()">Filtrar por Películas</button>
+    </div>
+
+    <div id="manufacturer-menu" class="hidden">
+        <label for="manufacturer-select">Seleccionar Manufacturer:</label>
+        <select id="manufacturer-select" onchange="showStarshipsByManufacturerSelection()"></select>
+    </div>
+
+    <div id="class-menu" class="hidden">
+        <label for="class-select">Seleccionar Clase:</label>
+        <select id="class-select" onchange="showStarshipsByClassSelection()"></select>
+    </div>
+
+    <div id="starships"></div>
+
+    <script src="starships.js"></script>
+
+
+
+
+    <div class="medeplejable-toggle">
+        <!-- Checkbox oculto para controlar el estado del menú -->
+        <input type="checkbox" id="toggle">
+        
+        <!-- Icono que actúa como botón para mostrar/ocultar el menú -->
+        <label for="toggle" class="medeplejable-icon">
+            <img src="https://i.ebayimg.com/images/g/x-4AAOxyXDhScxpN/s-l1200.jpg" alt="Menú">
+        </label>
+        
+        <!-- Menú desplegable -->
+        <div class="medeplejable">
+            <ul>
+                <li><button onclick="showStarshipsByManufacturer()">Filtrar por Manufacturer</button></li>
+                <li><button onclick="showStarshipsByConsumables()">Mostrar Consumables</button></li>
+                <li><button onclick="showStarshipsByClass()">Filtrar por Clase</button></li>
+                <li><button onclick="showStarshipsByFilms()">Filtrar por Películas</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="manufacturer-menu" class="hidden">
+        <label for="manufacturer-select">Seleccionar Manufacturer:</label>
+        <select id="manufacturer-select" onchange="showStarshipsByManufacturerSelection()"></select>
+    </div>
+
+    <div id="class-menu" class="hidden">
+        <label for="class-select">Seleccionar Clase:</label>
+        <select id="class-select" onchange="showStarshipsByClassSelection()"></select>
+    </div>
+
+    <div id="starships"></div>
+
+    <script src="starships.js"></script>
+    <script>
+        // Opcional: Puedes agregar aquí scripts adicionales si necesitas que se maneje el estado del menú desplegable
+    </script>
+
+
+
+</body>
+</html>
