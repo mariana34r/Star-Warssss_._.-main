@@ -18,7 +18,7 @@ async function obtenerTodasLasEspecies(url) {
 
     return todasLasEspecies;
 }
-
+/*----------*/
 function mostrarDatosDeEspecies(especies) {
     const contenedor = document.getElementById('species');
     contenedor.innerHTML = '';

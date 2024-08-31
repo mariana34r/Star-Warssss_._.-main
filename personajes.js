@@ -19,7 +19,7 @@ async function obtenerTodosLosPersonajes() {
 
     return personajes;
 }
-
+/*----------*/
 async function inicializarPagina() {
     todosLosPersonajes = await obtenerTodosLosPersonajes();
     mostrarPersonajes(todosLosPersonajes);

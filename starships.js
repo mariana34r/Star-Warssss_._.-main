@@ -20,7 +20,7 @@ async function fetchAllStarships(url) {
 
     return allStarships;
 }
-
+/*----------*/
 async function fetchAllFilms(url) {
     let allFilms = [];
     let nextUrl = url;

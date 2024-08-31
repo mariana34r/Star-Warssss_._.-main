@@ -18,7 +18,7 @@ async function obtenerTodosLosVehiculos(url) {
 
     return todosLosVehiculos;
 }
-
+/*----------*/
 function mostrarVehiculos(vehiculos) {
     const contenedor = document.getElementById('vehicles');
     contenedor.innerHTML = '';

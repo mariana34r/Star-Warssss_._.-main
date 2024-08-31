@@ -19,7 +19,7 @@ async function fetchAllFilms(url) {
 
     return allFilms;
 }
-
+/*----------*/
 function displayFilms(films) {
     const container = document.getElementById('films');
     container.innerHTML = '';
