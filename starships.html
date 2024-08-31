@@ -49,7 +49,7 @@
     <h1>Starships</h1>
     <div id="menu">
         <button onclick="showStarshipsByManufacturer()">Filtrar por Manufacturer</button>
-        <button onclick="showStarshipsByConsumables()">Mostrar Consumables</button>
+        <button onclick="showStarshipsByConsumables()">Mostrar Consumables (menor a mayor)</button>
         <button onclick="showStarshipsByClass()">Filtrar por Clase</button>
         <button onclick="showStarshipsByFilms()">Filtrar por Películas</button>
     </div>
@@ -72,15 +72,15 @@
 
 
     <div class="medeplejable-toggle">
-        <!-- Checkbox oculto para controlar el estado del menú -->
+     
         <input type="checkbox" id="toggle">
         
-        <!-- Icono que actúa como botón para mostrar/ocultar el menú -->
+      
         <label for="toggle" class="medeplejable-icon">
             <img src="https://i.ebayimg.com/images/g/x-4AAOxyXDhScxpN/s-l1200.jpg" alt="Menú">
         </label>
         
-        <!-- Menú desplegable -->
+   
         <div class="medeplejable">
             <ul>
                 <li><button onclick="showStarshipsByManufacturer()">Filtrar por Manufacturer</button></li>
@@ -104,10 +104,7 @@
     <div id="starships"></div>
 
     <script src="starships.js"></script>
-    <script>
-        // Opcional: Puedes agregar aquí scripts adicionales si necesitas que se maneje el estado del menú desplegable
-    </script>
-
+   
 
 
 </body>

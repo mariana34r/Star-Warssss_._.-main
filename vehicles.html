@@ -27,39 +27,39 @@
 
 
 
-    <h1>Vehicles</h1>
+    <h1>Vehículos</h1>
     <div id="filters">
-        <button onclick="showVehicleByModel()">Modelo de Vehículos</button>
+        <button onclick="mostrarVehiculosPorModelo()">Modelo de vehículos</button>
         <div id="model-menu" class="hidden">
             <label for="model-select">Selecciona un modelo:</label>
-            <select id="model-select" onchange="showVehicleByModelSelection()">
+            <select id="model-select" onchange="mostrarVehiculoPorSeleccionModelo()">
                 <option value="">Seleccionar</option>
                 <!-- Opciones de modelos se cargarán aquí -->
             </select>
         </div>
 
-        <button onclick="sortByCargoCapacity()">Ordenar por Capacidad de Carga</button>
+        <button onclick="ordenarPorCapacidadDeCarga()">Ordenar por Capacidad de Carga</button>
 
-        <button onclick="showMoviesByVehicle()">Películas en las que Aparece</button>
+        <button onclick="mostrarPeliculasPorVehiculo()">Películas en las que Aparece</button>
         <div id="movies-menu" class="hidden">
             <label for="movies-vehicle-select">Selecciona un vehículo:</label>
-            <select id="movies-vehicle-select" onchange="showMovies()">
+            <select id="movies-vehicle-select" onchange="mostrarPeliculas()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de vehículos se cargarán aquí -->
+          
             </select>
         </div>
 
-        <button onclick="showVehicleByClass()">Clase de Vehículos</button>
+        <button onclick="mostrarVehiculosPorClase()">Clase de vehículos</button>
         <div id="class-menu" class="hidden">
             <label for="class-select">Selecciona una clase:</label>
-            <select id="class-select" onchange="showVehicleByClassSelection()">
+            <select id="class-select" onchange="mostrarVehiculosPorSeleccionClase()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de clases se cargarán aquí -->
+          
             </select>
         </div>
     </div>
     <div id="vehicles" class="container">
-        <!-- Vehículos se cargarán aquí -->
+       
     </div>
     <script src="vehicles.js"></script>
 </body>

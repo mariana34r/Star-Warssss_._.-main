@@ -25,15 +25,15 @@
 
 
 
-<h1>Personajes</h1>
+    <h1>Personajes</h1>
     <div id="filters">
-        <button onclick="sortByHeight()">Menor a Mayor Altura</button>
-        <button onclick="filterByEyeColor()">Color de Ojos Azules</button>
-        <button onclick="sortByAge()">Mayor a Menor Edad</button>
-        <button onclick="toggleGenderMenu()">Filtrar por Género</button>
-        <div id="gender-menu" class="hidden">
-            <label for="gender-select">Selecciona el género:</label>
-            <select id="gender-select" onchange="filterByGender()">
+        <button onclick="ordenarPorAltura()">Menor a Mayor Altura</button>
+        <button onclick="filtrarPorColorDeOjos()">Color de Ojos Azules</button>
+        <button onclick="ordenarPorEdad()">Mayor a Menor Edad</button>
+        <button onclick="alternarMenuGenero()">Filtrar por Género</button>
+        <div id="menu-genero" class="hidden">
+            <label for="select-genero">Selecciona el género:</label>
+            <select id="select-genero" onchange="filtrarPorGenero()">
                 <option value="">Todos</option>
                 <option value="male">Masculino</option>
                 <option value="female">Femenino</option>
@@ -41,8 +41,8 @@
             </select>
         </div>
     </div>
-    <div id="characters" class="container">
-        <!-- Personajes se cargarán aquí -->
+    <div id="personajes" class="container">
+        
     </div>
     <script src="personajes.js"></script>
 </body>

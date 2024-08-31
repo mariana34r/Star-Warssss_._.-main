@@ -99,6 +99,10 @@ button:hover {
 
 #model-menu, #movies-menu, #class-menu {
     margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Starjout.ttf';
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
 }
 
 #model-select, #movies-vehicle-select, #class-select {

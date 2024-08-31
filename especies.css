@@ -94,6 +94,10 @@ button:hover {
 
 #classification-menu, #language-menu, #eye-color-menu {
     margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Starjout.ttf';
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
 }
 
 #classification-select, #language-select, #eye-color-select {

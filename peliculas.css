@@ -90,6 +90,10 @@ button:hover {
 
 #characters-menu, #director-menu, #starships-menu {
     margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Starjout.ttf';
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
 }
 
 #film-select, #director-film-select, #starships-film-select {

@@ -97,16 +97,26 @@ button:hover {
     display: none;
 }
 
-#gender-menu {
+#menu-genero {
+    margin-bottom: 20px;
+    margin-top: 10px;
     margin-left: 20px;
     font-family: 'Starjout.ttf';
     text-shadow: 0 0 10px rgb(238, 255, 0);
     color: #000000;
 }
 
-#gender-select {
+
+#select-genero{
     padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Starjout.ttf';
+    text-shadow: 0 0 10px rgb(238, 255, 0);
+    color: #000000;
 }
+
 
 .menu {
     display: block;

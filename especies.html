@@ -22,44 +22,43 @@
 
 
 
-
     <h1>Especies</h1>
 
-
-
     <div id="filters">
-        <button onclick="showSpeciesByClassification()">Clasificación</button>
+        <button onclick="mostrarEspeciesPorClasificacion()">Clasificación</button>
         <div id="classification-menu" class="hidden">
             <label for="classification-select">Selecciona una clasificación:</label>
-            <select id="classification-select" onchange="showSpeciesByClassificationSelection()">
+            <select id="classification-select" onchange="mostrarEspeciesPorClasificacionSeleccion()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de clasificaciones se cargarán aquí -->
+                
             </select>
         </div>
 
-        <button onclick="showSpeciesByLanguage()">Lenguaje</button>
+        <button onclick="mostrarEspeciesPorLenguaje()">Lenguaje</button>
         <div id="language-menu" class="hidden">
             <label for="language-select">Selecciona un lenguaje:</label>
-            <select id="language-select" onchange="showSpeciesByLanguageSelection()">
+            <select id="language-select" onchange="mostrarEspeciesPorLenguajeSeleccion()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de lenguajes se cargarán aquí -->
+                
             </select>
         </div>
 
-        <button onclick="showSpeciesByEyeColor()">Color de Ojos</button>
+        <button onclick="mostrarEspeciesPorColorDeOjos()">Color de ojos</button>
         <div id="eye-color-menu" class="hidden">
             <label for="eye-color-select">Selecciona un color de ojos:</label>
-            <select id="eye-color-select" onchange="showSpeciesByEyeColorSelection()">
+            <select id="eye-color-select" onchange="mostrarEspeciesPorColorDeOjosSeleccion()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de colores de ojos se cargarán aquí -->
+      
             </select>
         </div>
 
-        <button onclick="sortByAverageLifespan()">Esperanza de Vida</button>
+        <button onclick="ordenarPorEsperanzaDeVida()">Esperanza de vida</button>
     </div>
+
     <div id="species" class="container">
-        <!-- Especies se cargarán aquí -->
+   
     </div>
+
     <script src="especies.js"></script>
 
 

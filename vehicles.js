@@ -1,166 +1,157 @@
-const vehiclesUrl = 'https://swapi.dev/api/vehicles/';
+const urlVehiculos = 'https://swapi.dev/api/vehicles/';
 
+async function obtenerTodosLosVehiculos(url) {
+    let todosLosVehiculos = [];
+    let vehiculoss = url;
 
-async function fetchAllVehicles(url) {
-    let allVehicles = [];
-    let nextUrl = url;
-
-    while (nextUrl) {
+    while (vehiculoss) {
         try {
-            const response = await fetch(nextUrl);
-            const data = await response.json();
-            allVehicles = allVehicles.concat(data.results);
-            nextUrl = data.next; 
+            const respuesta = await fetch(vehiculoss);
+            const datos = await respuesta.json();
+            todosLosVehiculos = todosLosVehiculos.concat(datos.results);
+            vehiculoss = datos.next; 
         } catch (error) {
-            console.error('Error fetching data:', error);
-            nextUrl = null; 
+            console.error('Error al obtener los datos:', error);
+            vehiculoss = null; 
         }
     }
 
-    return allVehicles;
+    return todosLosVehiculos;
 }
 
+function mostrarVehiculos(vehiculos) {
+    const contenedor = document.getElementById('vehicles');
+    contenedor.innerHTML = '';
 
-function displayVehicles(vehicles) {
-    const container = document.getElementById('vehicles');
-    container.innerHTML = '';
-
-    vehicles.forEach(vehicle => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <h3>${vehicle.name}</h3>
-            <p>Modelo: ${vehicle.model}</p>
-            <p>Capacidad de Carga: ${vehicle.cargo_capacity}</p>
-            <p>Clase: ${vehicle.vehicle_class}</p>
+    vehiculos.forEach(vehiculo => {
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'card';
+        tarjeta.innerHTML = `
+            <h3>${vehiculo.name}</h3>
+            <p>Modelo: ${vehiculo.model}</p>
+            <p>Capacidad de Carga: ${vehiculo.cargo_capacity}</p>
+            <p>Clase: ${vehiculo.vehicle_class}</p>
         `;
-        container.appendChild(card);
+        contenedor.appendChild(tarjeta);
     });
 }
 
-
-function showVehicleByModel() {
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
+function mostrarVehiculosPorModelo() {
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
         const select = document.getElementById('model-select');
-        const models = [...new Set(vehicles.map(v => v.model))]; 
+        const modelos = [...new Set(vehiculos.map(v => v.model))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
-        models.forEach(model => {
-            const option = document.createElement('option');
-            option.value = model;
-            option.textContent = model;
-            select.appendChild(option);
+        modelos.forEach(modelo => {
+            const opcion = document.createElement('option');
+            opcion.value = modelo;
+            opcion.textContent = modelo;
+            select.appendChild(opcion);
         });
         document.getElementById('model-menu').classList.remove('hidden');
     });
 }
 
+function mostrarVehiculoPorSeleccionModelo() {
+    const modelo = document.getElementById('model-select').value;
+    if (!modelo) return;
 
-function showVehicleByModelSelection() {
-    const model = document.getElementById('model-select').value;
-    if (!model) return;
-
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
-        const selectedVehicle = vehicles.find(v => v.model === model);
-        if (selectedVehicle) {
-            const container = document.getElementById('vehicles');
-            container.innerHTML = `<h2>Vehículo del modelo ${model}</h2>`;
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <h3>${selectedVehicle.name}</h3>
-                <p>Modelo: ${selectedVehicle.model}</p>
-                <p>Capacidad de Carga: ${selectedVehicle.cargo_capacity}</p>
-                <p>Clase: ${selectedVehicle.vehicle_class}</p>
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
+        const vehiculoSeleccionado = vehiculos.find(v => v.model === modelo);
+        if (vehiculoSeleccionado) {
+            const contenedor = document.getElementById('vehicles');
+            contenedor.innerHTML = `<h2>Vehículo del modelo ${modelo}</h2>`;
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'card';
+            tarjeta.innerHTML = `
+                <h3>${vehiculoSeleccionado.name}</h3>
+                <p>Modelo: ${vehiculoSeleccionado.model}</p>
+                <p>Capacidad de Carga: ${vehiculoSeleccionado.cargo_capacity}</p>
+                <p>Clase: ${vehiculoSeleccionado.vehicle_class}</p>
             `;
-            container.appendChild(card);
+            contenedor.appendChild(tarjeta);
         }
     });
 }
 
-
-function sortByCargoCapacity() {
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
-        vehicles.sort((a, b) => b.cargo_capacity - a.cargo_capacity);
-        displayVehicles(vehicles);
+function ordenarPorCapacidadDeCarga() {
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
+        vehiculos.sort((a, b) => b.cargo_capacity - a.cargo_capacity);
+        mostrarVehiculos(vehiculos);
     });
 }
 
-function showMoviesByVehicle() {
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
+function mostrarPeliculasPorVehiculo() {
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
         const select = document.getElementById('movies-vehicle-select');
         select.innerHTML = '<option value="">Seleccionar</option>';
-        vehicles.forEach(vehicle => {
-            const option = document.createElement('option');
-            option.value = vehicle.url;
-            option.textContent = vehicle.name;
-            select.appendChild(option);
+        vehiculos.forEach(vehiculo => {
+            const opcion = document.createElement('option');
+            opcion.value = vehiculo.url;
+            opcion.textContent = vehiculo.name;
+            select.appendChild(opcion);
         });
         document.getElementById('movies-menu').classList.remove('hidden');
     });
 }
 
+function mostrarPeliculas() {
+    const urlVehiculo = document.getElementById('movies-vehicle-select').value;
+    if (!urlVehiculo) return;
 
-function showMovies() {
-    const vehicleUrl = document.getElementById('movies-vehicle-select').value;
-    if (!vehicleUrl) return;
-
-    fetch(vehicleUrl).then(response => response.json()).then(vehicle => {
-        const moviesPromises = vehicle.films.map(url => fetch(url).then(res => res.json()));
-        Promise.all(moviesPromises).then(movies => {
-            const container = document.getElementById('vehicles');
-            container.innerHTML = `<h2>Películas en las que aparece ${vehicle.name}</h2>`;
-            movies.forEach(movie => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <h3>${movie.title}</h3>
-                    <p>Director: ${movie.director}</p>
-                    <p>Fecha de lanzamiento: ${movie.release_date}</p>
+    fetch(urlVehiculo).then(respuesta => respuesta.json()).then(vehiculo => {
+        const promesasPeliculas = vehiculo.films.map(url => fetch(url).then(res => res.json()));
+        Promise.all(promesasPeliculas).then(peliculas => {
+            const contenedor = document.getElementById('vehicles');
+            contenedor.innerHTML = `<h2>Películas en las que aparece ${vehiculo.name}</h2>`;
+            peliculas.forEach(pelicula => {
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'card';
+                tarjeta.innerHTML = `
+                    <h3>${pelicula.title}</h3>
+                    <p>Director: ${pelicula.director}</p>
+                    <p>Fecha de lanzamiento: ${pelicula.release_date}</p>
                 `;
-                container.appendChild(card);
+                contenedor.appendChild(tarjeta);
             });
         });
     });
 }
 
-
-function showVehicleByClass() {
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
+function mostrarVehiculosPorClase() {
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
         const select = document.getElementById('class-select');
-        const classes = [...new Set(vehicles.map(v => v.vehicle_class))]; 
+        const clases = [...new Set(vehiculos.map(v => v.vehicle_class))]; 
         select.innerHTML = '<option value="">Seleccionar</option>';
-        classes.forEach(vehicleClass => {
-            const option = document.createElement('option');
-            option.value = vehicleClass;
-            option.textContent = vehicleClass;
-            select.appendChild(option);
+        clases.forEach(clase => {
+            const opcion = document.createElement('option');
+            opcion.value = clase;
+            opcion.textContent = clase;
+            select.appendChild(opcion);
         });
         document.getElementById('class-menu').classList.remove('hidden');
     });
 }
 
+function mostrarVehiculosPorSeleccionClase() {
+    const claseVehiculo = document.getElementById('class-select').value;
+    if (!claseVehiculo) return;
 
-function showVehicleByClassSelection() {
-    const vehicleClass = document.getElementById('class-select').value;
-    if (!vehicleClass) return;
-
-    fetchAllVehicles(vehiclesUrl).then(vehicles => {
-        const selectedVehicles = vehicles.filter(v => v.vehicle_class === vehicleClass);
-        const container = document.getElementById('vehicles');
-        container.innerHTML = `<h2>Vehículos de la clase ${vehicleClass}</h2>`;
-        selectedVehicles.forEach(vehicle => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <h3>${vehicle.name}</h3>
-                <p>Modelo: ${vehicle.model}</p>
-                <p>Capacidad de Carga: ${vehicle.cargo_capacity}</p>
-                <p>Clase: ${vehicle.vehicle_class}</p>
+    obtenerTodosLosVehiculos(urlVehiculos).then(vehiculos => {
+        const vehiculosSeleccionados = vehiculos.filter(v => v.vehicle_class === claseVehiculo);
+        const contenedor = document.getElementById('vehicles');
+        contenedor.innerHTML = `<h2>Vehículos de la clase ${claseVehiculo}</h2>`;
+        vehiculosSeleccionados.forEach(vehiculo => {
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'card';
+            tarjeta.innerHTML = `
+                <h3>${vehiculo.name}</h3>
+                <p>Modelo: ${vehiculo.model}</p>
+                <p>Capacidad de Carga: ${vehiculo.cargo_capacity}</p>
+                <p>Clase: ${vehiculo.vehicle_class}</p>
             `;
-            container.appendChild(card);
+            contenedor.appendChild(tarjeta);
         });
     });
 }
 
-
-fetchAllVehicles(vehiclesUrl).then(displayVehicles);
+obtenerTodosLosVehiculos(urlVehiculos).then(mostrarVehiculos);

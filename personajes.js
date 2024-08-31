@@ -1,127 +1,117 @@
 const apiUrl = 'https://swapi.dev/api/people/';
-let allCharacters = [];
+let todosLosPersonajes = [];
 
+async function obtenerTodosLosPersonajes() {
+    let personajes = [];
+    let perosnajess = apiUrl;
 
-async function fetchAllCharacters() {
-    let characters = [];
-    let nextUrl = apiUrl;
-
-    while (nextUrl) {
+    while (perosnajess) {
         try {
-            const response = await fetch(nextUrl);
-            const data = await response.json();
-            characters = characters.concat(data.results);
-            nextUrl = data.next;
+            const respuesta = await fetch(perosnajess);
+            const datos = await respuesta.json();
+            personajes = personajes.concat(datos.results);
+            perosnajess = datos.next;
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error al obtener datos:', error);
             break;
         }
     }
 
-    return characters;
+    return personajes;
 }
 
-
-async function initializePage() {
-    allCharacters = await fetchAllCharacters();
-    displayCharacters(allCharacters);
+async function inicializarPagina() {
+    todosLosPersonajes = await obtenerTodosLosPersonajes();
+    mostrarPersonajes(todosLosPersonajes);
 }
 
-
-function createCharacterCard(character) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-        <h3>${character.name}</h3>
-        <p>Altura: ${character.height} cm</p>
-        <p>Color de ojos: ${character.eye_color}</p>
-        <p>Fecha de nacimiento: ${character.birth_year}</p>
-        <p>Género: ${character.gender}</p>
+function crearTarjetaPersonaje(personaje) {
+    const tarjeta = document.createElement('div');
+    tarjeta.className = 'card';
+    tarjeta.innerHTML = `
+        <h3>${personaje.name}</h3>
+        <p>Altura: ${personaje.height} cm</p>
+        <p>Color de ojos: ${personaje.eye_color}</p>
+        <p>Fecha de nacimiento: ${personaje.birth_year}</p>
+        <p>Género: ${personaje.gender}</p>
     `;
-    return card;
+    return tarjeta;
 }
 
+function mostrarPersonajes(personajes) {
+    const contenedor = document.getElementById('personajes');
+    contenedor.innerHTML = '';
 
-function displayCharacters(characters) {
-    const container = document.getElementById('characters');
-    container.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-    characters.forEach(character => {
-        fragment.appendChild(createCharacterCard(character));
+    const fragmento = document.createDocumentFragment();
+    personajes.forEach(personaje => {
+        fragmento.appendChild(crearTarjetaPersonaje(personaje));
     });
-    container.appendChild(fragment);
+    contenedor.appendChild(fragmento);
 }
 
+function mostrarPersonajesConColorDeOjos(personajes) {
+    const contenedor = document.getElementById('personajes');
+    contenedor.innerHTML = '';
 
-function displayCharactersWithEyeColor(characters) {
-    const container = document.getElementById('characters');
-    container.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-    characters.forEach(character => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <h3>${character.name}</h3>
-            <p>Color de ojos: ${character.eye_color}</p>
+    const fragmento = document.createDocumentFragment();
+    personajes.forEach(personaje => {
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'card';
+        tarjeta.innerHTML = `
+            <h3>${personaje.name}</h3>
+            <p>Color de ojos: ${personaje.eye_color}</p>
         `;
-        fragment.appendChild(card);
+        fragmento.appendChild(tarjeta);
     });
-    container.appendChild(fragment);
+    contenedor.appendChild(fragmento);
 }
 
+function mostrarPersonajesConGenero(personajes) {
+    const contenedor = document.getElementById('personajes');
+    contenedor.innerHTML = '';
 
-function displayCharactersWithGender(characters) {
-    const container = document.getElementById('characters');
-    container.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-    characters.forEach(character => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <h3>${character.name}</h3>
-            <p>Género: ${character.gender}</p>
+    const fragmento = document.createDocumentFragment();
+    personajes.forEach(personaje => {
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'card';
+        tarjeta.innerHTML = `
+            <h3>${personaje.name}</h3>
+            <p>Género: ${personaje.gender}</p>
         `;
-        fragment.appendChild(card);
+        fragmento.appendChild(tarjeta);
     });
-    container.appendChild(fragment);
+    contenedor.appendChild(fragmento);
 }
 
-
-function sortByHeight() {
-    const sortedCharacters = [...allCharacters].sort((a, b) => a.height - b.height);
-    displayCharacters(sortedCharacters);
+function ordenarPorAltura() {
+    const personajesOrdenados = [...todosLosPersonajes].sort((a, b) => a.height - b.height);
+    mostrarPersonajes(personajesOrdenados);
 }
 
-function filterByEyeColor() {
-    const blueEyed = allCharacters.filter(character => character.eye_color === 'blue');
-    displayCharactersWithEyeColor(blueEyed);
+function filtrarPorColorDeOjos() {
+    const ojosAzules = todosLosPersonajes.filter(personaje => personaje.eye_color === 'blue');
+    mostrarPersonajesConColorDeOjos(ojosAzules);
 }
 
-
-function sortByAge() {
-    const currentYear = new Date().getFullYear();
-    const charactersWithAge = allCharacters.map(character => {
-        const birthYear = parseInt(character.birth_year.split(' ')[0], 10);
-        return { ...character, age: currentYear - birthYear };
+function ordenarPorEdad() {
+    const añoActual = new Date().getFullYear();
+    const personajesConEdad = todosLosPersonajes.map(personaje => {
+        const añoNacimiento = parseInt(personaje.birth_year.split(' ')[0], 10);
+        return { ...personaje, edad: añoActual - añoNacimiento };
     });
-    const sortedCharacters = charactersWithAge.sort((a, b) => b.age - a.age);
-    displayCharacters(sortedCharacters);
+    const personajesOrdenados = personajesConEdad.sort((a, b) => b.edad - a.edad);
+    mostrarPersonajes(personajesOrdenados);
 }
 
-
-function filterByGender() {
-    const gender = document.getElementById('gender-select').value;
-    const filtered = allCharacters.filter(character => character.gender === gender || gender === '');
-    displayCharactersWithGender(filtered);
+function filtrarPorGenero() {
+    const genero = document.getElementById('select-genero').value;
+    const filtrado = todosLosPersonajes.filter(personaje => personaje.gender === genero || genero === '');
+    mostrarPersonajesConGenero(filtrado);
 }
 
-function toggleGenderMenu() {
-    const menu = document.getElementById('gender-menu');
+function alternarMenuGenero() {
+    const menu = document.getElementById('menu-genero');
     menu.classList.toggle('hidden');
 }
 
-
-initializePage();
+inicializarPagina();

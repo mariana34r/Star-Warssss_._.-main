@@ -27,34 +27,34 @@
 
     <h1>Planetas</h1>
     <div id="filters">
-        <button onclick="sortByPopulation()">Ordenar por Población (Mayor a Menor)</button>
-        <button onclick="toggleResidentsMenu()">Filtrar por Residentes</button>
+        <button onclick="ordenarPorPoblacion()">Ordenar por Población (Mayor a Menor)</button>
+        <button onclick="alternarMenuResidentes()">Filtrar por Residentes</button>
         <div id="residents-menu" class="hidden">
             <label for="planet-select">Selecciona un planeta:</label>
-            <select id="planet-select" onchange="filterByPlanetResidents()">
+            <select id="planet-select" onchange="filtrarPorResidentesDelPlaneta()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de planetas se cargarán aquí -->
+
             </select>
         </div>
-        <button onclick="toggleTerrainMenu()">Filtrar por Tipo de Terreno</button>
+        <button onclick="alternarMenuTerreno()">Filtrar por Tipo de Terreno</button>
         <div id="terrain-menu" class="hidden">
             <label for="terrain-select">Selecciona un tipo de terreno:</label>
-            <select id="terrain-select" onchange="filterByTerrain()">
+            <select id="terrain-select" onchange="filtrarPorTerreno()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de tipos de terreno se cargarán aquí -->
+
             </select>
         </div>
-        <button onclick="toggleClimateMenu()">Filtrar por Clima</button>
+        <button onclick="alternarMenuClima()">Filtrar por Clima</button>
         <div id="climate-menu" class="hidden">
             <label for="climate-select">Selecciona un clima:</label>
-            <select id="climate-select" onchange="filterByClimate()">
+            <select id="climate-select" onchange="filtrarPorClima()">
                 <option value="">Seleccionar</option>
-                <!-- Opciones de climas se cargarán aquí -->
+
             </select>
         </div>
     </div>
     <div id="planets" class="container">
-        <!-- Planetas se cargarán aquí -->
+
     </div>
     <script src="planetas.js"></script>
 </body>
